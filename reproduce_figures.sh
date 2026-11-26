@@ -20,7 +20,7 @@ step "Figure 3 and Equation 13: penalties P_k of the 54 cases"
 $PY scripts/sensitivity_pmnf.py --final $F --dir $A > $A/sensitivity.txt
 $PY scripts/plot_sensitivity_heatmap.py --coeffs $A/sensitivity_coeffs_pmnf.csv --outdir $A
 
-step "Figure S1: near-optimal levels and the heuristic's choices"
+step "Figure 4: near-optimal levels and the heuristic's choices"
 $PY scripts/plot_sensitivity_intervals.py --final $F --out $A/fig_sensitivity_intervals | tee $A/sensitivity_intervals.txt
 
 step "Table 3 (left): regret of the launch heuristic (Equation 14); Section S5"
@@ -28,13 +28,13 @@ $PY scripts/launch_heuristic.py --final $F --sens $A/sensitivity_coeffs_pmnf.csv
   > $A/launch_heuristic.txt
 $PY scripts/heuristic_loo.py --final $F --dir $A > $A/heuristic_loo.txt
 
-step "Figure 4: instruction roofline"
+step "Figure 5: instruction roofline"
 $PY scripts/plot_roofline_v3.py --dir $R3/roofline --no-l2 --out fig_roofline_v3_nol2
 
-step "Solution quality against the baselines, Sphere/OneMax (Figure 5 is drawn with the transfer step below)"
+step "Solution quality against the baselines, Sphere/OneMax (Figure 6 is drawn with the transfer step below)"
 $PY scripts/analyze_quality.py --dir $R3/quality > $A/quality_sphere_onemax.txt
 
-step "Figure 6, Table 4 and Table S1: comparison with EvoX (baselines: torch.compile max-autotune-no-cudagraphs)"
+step "Figure 7, Table 4 and Table S1: comparison with EvoX (baselines: torch.compile max-autotune-no-cudagraphs)"
 $PY scripts/plot_evox_comparison.py --final $F --evox $R3/evox_autotune --outdir $A > $A/evox_comparison.txt
 $PY scripts/gen_evox_config_table.py --csv $A/augmented_vs_evox.csv --tex $A/evox_launch_configs.tex
 # the same comparison with the default compile mode, for Table S4
@@ -60,7 +60,7 @@ $PY scripts/analyze_defer_probe.py $R3/defer_probe_v3.csv > $A/defer_probe.txt
 $PY scripts/analyze_evox_variants.py --dir $R3/evox > $A/evox_variants.txt
 $PY scripts/paper_numbers_v3.py --dir $R3 > $A/paper_numbers_v3.txt
 
-step "Table 5, Figures 5 and 7, Table S3: transfer to CEC 2013 LSGO f1-f3, f12 and the knapsack; validation cells"
+step "Table 5, Figures 6 and 8, Table S3: transfer to CEC 2013 LSGO f1-f3, f12 and the knapsack; validation cells"
 T=results/transfer
 for z in $(find $T -name 'phase3_*.csv.gz'); do [ -f "${z%.gz}" ] || gunzip -k "$z"; done
 $PY scripts/analyze_transfer.py --dir $T --ref $R3 > $T/transfer_summary_stdout.txt

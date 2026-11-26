@@ -40,6 +40,6 @@ if PYTHONPATH="python${EVOX_SRC:+:$EVOX_SRC}" "$PY" -c "import torch, evox" 2>/d
   (cd python && PYTHONPATH=".${EVOX_SRC:+:$EVOX_SRC}" "$PY" -m step_bench.bench_generation --op ga-gen \
      --n 8192 --d 131072 --islands 32 --seed 0 --generations 5 --warmup 2 --compiled-only) | tee smoke/evox.csv
 else
-  echo "torch or evox not importable: skipped (see README, 'Python environment')"
+  echo "torch or evox not importable: skipped (see REPRODUCE.md, 'Python environment of the baselines')"
 fi
 echo; echo "smoke test done"

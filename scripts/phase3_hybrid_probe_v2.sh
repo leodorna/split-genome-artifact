@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Kernel sweep over the split factor s (cap), t_x and t_y, with the block-per-individual
 # layouts as an option. The cells come from SWEEP (default configs/sweep_realistic.json,
-# I*N*D = 2^30); README.md gives the settings of the paper's ablation. Writes OUT
+# I*N*D = 2^30); REPRODUCE.md gives the settings of the paper's ablation. Writes OUT
 # (default results/phase3_sweep.csv):
 #   op,layout,cap,I,N,D,total,rows,NO,nUnits,nCouples,tx,ty,threads,regs,smem,status,seed,rep,time_us
 #

@@ -1,0 +1,13 @@
+kernel,layout,vec4,regs
+DE1bin,highdim,0,51
+DE1bin,highdim,1,56
+DE1bin,individual,0,40
+DE1bin,individual,1,48
+SBXCrossover,highdim,0,72
+SBXCrossover,highdim,1,96
+SBXCrossover,individual,0,64
+SBXCrossover,individual,1,96
+UX,highdim,0,64
+UX,highdim,1,111
+UX,individual,0,60
+UX,individual,1,94

@@ -1,0 +1,17 @@
+== same algorithm: ours vs island-local EvoX (10 seeds each) ==
+  ux-bf gen   10 best | evox -1.224e+06 [-1.226e+06, -1.222e+06] | s1: -1.224e+06 (+0.0% [-0.0, +0.0], p=0.95)  s8: -1.224e+06 (+0.0% [-0.0, +0.0], p=0.95)  s8defer: -1.224e+06 (+0.0% [-0.0, +0.0], p=0.95)  v4s1: -1.223e+06 (-0.0% [-0.1, +0.0], p=0.03)  v4s8: -1.223e+06 (-0.0% [-0.1, +0.0], p=0.03)  s2w: -1.224e+06 (+0.0% [-0.0, +0.0], p=0.95)
+  ux-bf gen  100 best | evox -1.232e+06 [-1.234e+06, -1.231e+06] | s1: -1.232e+06 (-0.0% [-0.1, +0.0], p=0.46)  s8: -1.232e+06 (-0.0% [-0.1, +0.0], p=0.46)  s8defer: -1.232e+06 (-0.0% [-0.1, +0.0], p=0.46)  v4s1: -1.232e+06 (-0.0% [-0.1, +0.0], p=0.15)  v4s8: -1.232e+06 (-0.0% [-0.1, +0.0], p=0.15)  s2w: -1.232e+06 (-0.0% [-0.1, +0.0], p=0.46)
+  ux-bf gen 1000 best | evox -1.255e+06 [-1.257e+06, -1.254e+06] | s1: -1.255e+06 (-0.0% [-0.0, +0.0], p=0.98)  s8: -1.255e+06 (-0.0% [-0.0, +0.0], p=0.98)  s8defer: -1.255e+06 (-0.0% [-0.0, +0.0], p=0.98)  v4s1: -1.255e+06 (-0.0% [-0.0, +0.0], p=0.90)  v4s8: -1.255e+06 (-0.0% [-0.0, +0.0], p=0.90)  s2w: -1.255e+06 (-0.0% [-0.0, +0.0], p=0.98)
+  smallest p over all 36 tests: 0.031; tests with p < 0.05: 2; smallest Holm-adjusted p: 1.00
+  gen   10: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.1%
+  gen  100: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.1%
+  gen 1000: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.0%
+  largest |median best - EvoX| / EvoX: 0.000 (best and mean); best fitness beyond 2%: none
+
+== layout equivalence: split vs unsplit, same seed ==
+  ux-bf   s8       vs s1   : identical trajectory in 30 of 30 seeds
+  ux-bf   s8defer  vs s1   : identical trajectory in 30 of 30 seeds
+  ux-bf   v4s8     vs v4s1 : identical trajectory in 30 of 30 seeds
+  ux-bf   s2w      vs s1   : identical trajectory in 30 of 30 seeds
+
+wrote quality_summary.csv, quality_layouts.csv, fig_quality.{pdf,png} in results/transfer/knapsack/quality

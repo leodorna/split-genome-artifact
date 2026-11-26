@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Split-genome GPU kernels for evolutionary operators"
+license: MIT
+authors:
+  - family-names: Dorneles
+    given-names: Leonardo da Luz
+  - family-names: Dorn
+    given-names: Marcio
+preferred-citation:
+  type: article
+  title: "Split-Genome Layouts for Evolutionary Algorithms on GPUs: Bottlenecks and Trade-offs at Million-Variable Scale"
+  authors:
+    - family-names: Dorneles
+      given-names: Leonardo da Luz
+    - family-names: Dorn
+      given-names: Marcio
+  status: submitted

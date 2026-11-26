@@ -1,0 +1,5 @@
+op,config,reference,identical,diverged,first_divergence
+ux-bf,s8,s1,30,0,
+ux-bf,s8defer,s1,30,0,
+ux-bf,v4s8,v4s1,30,0,
+ux-bf,s2w,s1,30,0,

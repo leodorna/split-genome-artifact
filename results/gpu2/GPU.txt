@@ -1,0 +1,7 @@
+# GPU 2 (2026-11-10)
+name, compute_cap, memory.total [MiB], driver_version, clocks.max.sm [MHz], clocks.max.memory [MHz], power.limit [W]
+NVIDIA RTX A6000, 8.6, 49140 MiB, 570.211.01, 2100 MHz, 8001 MHz, 300.00 W
+NVIDIA RTX A6000 CC 8.6 SMs 84 mem 47.4 GiB L2 6144 KiB regs/SM 65536 smem/SM 100 KiB maxThr/SM 1536 clk 1800 MHz memclk 8001 MHz bus 384 bit peakBW 768 GB/s
+Cuda compilation tools, release 12.9, V12.9.86
+Build cuda_12.9.r12.9/compiler.36037853_0
+build: make CUDA_ARCH=86 bench_generation_v2 (see build_sm86.log)

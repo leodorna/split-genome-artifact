@@ -1,0 +1,24 @@
+== same algorithm: ours vs island-local EvoX (10 seeds each) ==
+  de-gen gen   10 best | evox 21.63 [21.61, 21.64] | s1: 21.63 (+0.0% [-0.0, +0.0], p=0.49)  s8: 21.63 (+0.0% [-0.0, +0.0], p=0.49)  s8defer: 21.63 (+0.0% [-0.0, +0.0], p=0.49)  v4s1: 21.63 (+0.0% [-0.0, +0.0], p=0.36)  v4s8: 21.63 (+0.0% [-0.0, +0.0], p=0.36)  s4w: 21.63 (+0.0% [-0.0, +0.0], p=0.49)
+  de-gen gen  100 best | evox 21.59 [21.56, 21.6] | s1: 21.59 (-0.0% [-0.0, +0.0], p=0.59)  s8: 21.59 (-0.0% [-0.0, +0.0], p=0.59)  s8defer: 21.59 (-0.0% [-0.0, +0.0], p=0.59)  v4s1: 21.59 (-0.0% [-0.0, +0.0], p=0.71)  v4s8: 21.59 (-0.0% [-0.0, +0.0], p=0.71)  s4w: 21.59 (-0.0% [-0.0, +0.0], p=0.59)
+  de-gen gen 1000 best | evox 21.39 [21.36, 21.41] | s1: 21.39 (-0.0% [-0.1, +0.0], p=0.55)  s8: 21.39 (-0.0% [-0.1, +0.0], p=0.55)  s8defer: 21.39 (-0.0% [-0.1, +0.0], p=0.55)  v4s1: 21.38 (-0.0% [-0.1, +0.0], p=0.35)  v4s8: 21.38 (-0.0% [-0.1, +0.0], p=0.35)  s4w: 21.39 (-0.0% [-0.1, +0.0], p=0.55)
+  ga-gen gen   10 best | evox 21.6 [21.58, 21.61] | s1: 21.6 (+0.0% [-0.0, +0.0], p=0.95)  s8: 21.6 (+0.0% [-0.0, +0.0], p=0.95)  s8defer: 21.6 (+0.0% [-0.0, +0.0], p=0.95)  v4s1: 21.6 (+0.0% [-0.0, +0.0], p=0.91)  v4s8: 21.6 (+0.0% [-0.0, +0.0], p=0.91)  s4w: 21.6 (+0.0% [-0.0, +0.0], p=0.95)
+  ga-gen gen  100 best | evox 21.22 [21.18, 21.26] | s1: 21.23 (+0.1% [+0.0, +0.1], p=0.12)  s8: 21.23 (+0.1% [+0.0, +0.1], p=0.12)  s8defer: 21.23 (+0.1% [+0.0, +0.1], p=0.12)  v4s1: 21.23 (+0.0% [-0.0, +0.1], p=0.46)  v4s8: 21.23 (+0.0% [-0.0, +0.1], p=0.46)  s4w: 21.23 (+0.1% [+0.0, +0.1], p=0.12)
+  ga-gen gen 1000 best | evox 20.3 [20.29, 20.31] | s1: 20.3 (+0.0% [-0.0, +0.0], p=0.44)  s8: 20.3 (+0.0% [-0.0, +0.0], p=0.22)  s8defer: 20.3 (+0.0% [-0.0, +0.0], p=0.33)  v4s1: 20.29 (-0.0% [-0.0, +0.0], p=0.05)  v4s8: 20.3 (-0.0% [-0.0, +0.0], p=0.11)  s4w: 20.3 (+0.0% [-0.0, +0.0], p=0.28)
+  smallest p over all 72 tests: 0.016; tests with p < 0.05: 8; smallest Holm-adjusted p: 1.00
+  gen   10: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.0%
+  gen  100: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.1%
+  gen 1000: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.1%
+  largest |median best - EvoX| / EvoX: 0.001 (best and mean); best fitness beyond 2%: none
+
+== layout equivalence: split vs unsplit, same seed ==
+  de-gen  s8       vs s1   : identical trajectory in 30 of 30 seeds
+  de-gen  s8defer  vs s1   : identical trajectory in 30 of 30 seeds
+  de-gen  v4s8     vs v4s1 : identical trajectory in 30 of 30 seeds
+  de-gen  s4w      vs s1   : identical trajectory in 30 of 30 seeds
+  ga-gen  s8       vs s1   : identical trajectory in 8 of 30 seeds; the others part at generations [96, 139, 158, 237, 243, 276, 307, 321, 345, 372, 515, 526, 546, 574, 584, 594, 768, 860, 873, 984, 987, 997]
+  ga-gen  s8defer  vs s1   : identical trajectory in 8 of 30 seeds; the others part at generations [96, 139, 158, 237, 243, 276, 307, 321, 345, 372, 505, 515, 526, 574, 584, 594, 705, 768, 789, 860, 984, 987]
+  ga-gen  v4s8     vs v4s1 : identical trajectory in 3 of 30 seeds; the others part at generations [176, 230, 363, 377, 450, 487, 492, 522, 538, 539, 544, 550, 592, 595, 612, 628, 675, 702, 704, 753, 816, 828, 885, 940, 946, 990, 991]
+  ga-gen  s4w      vs s1   : identical trajectory in 7 of 30 seeds; the others part at generations [139, 177, 237, 243, 276, 322, 326, 354, 372, 444, 505, 594, 620, 661, 684, 748, 779, 795, 806, 807, 905, 908, 966]
+
+wrote quality_summary.csv, quality_layouts.csv, fig_quality.{pdf,png} in results/transfer/cec-f3/quality

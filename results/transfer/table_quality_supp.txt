@@ -1,0 +1,7 @@
+wrote ../results/transfer/table_quality_supp.tex
+Sphere / OneMax ($D = 1024$, 4096 bits): 90 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-1.0%, gen 100: +-3.2%, gen 1000: +-5.4%
+$f_1$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-7.2%, gen 100: +-12.1%, gen 1000: +-9.3%
+$f_2$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 0.25; widest best-fitness interval gen 10: +-4.3%, gen 100: +-3.0%, gen 1000: +-5.7%
+$f_3$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-0.0%, gen 100: +-0.1%, gen 1000: +-0.1%
+$f_{12}$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 0.38; widest best-fitness interval gen 10: +-6.4%, gen 100: +-10.7%, gen 1000: +-14.7%
+Knapsack (4096 items): 36 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-0.1%, gen 100: +-0.1%, gen 1000: +-0.0%

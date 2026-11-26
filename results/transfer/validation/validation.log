@@ -1,0 +1,17 @@
+[2026-11-23 08:17:19] cec-f2: kernels
+de-gen highdim done: 7004 rows
+de-gen highdim_vec4 done: 12064 rows
+ga-gen highdim done: 19067 rows
+ga-gen highdim_vec4 done: 24127 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/validation/cec-f2/phase3_cec-f2.csv (24127 rows)
+[2026-11-23 08:24:58] cec-f12: kernels
+de-gen highdim done: 7004 rows
+de-gen highdim_vec4 done: 12064 rows
+ga-gen highdim done: 19067 rows
+ga-gen highdim_vec4 done: 24127 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/validation/cec-f12/phase3_cec-f12.csv (24127 rows)
+[2026-11-23 08:32:32] knapsack: kernels
+ux-bf highdim done: 7004 rows
+ux-bf highdim_vec4 done: 11524 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/validation/knapsack/phase3_knapsack.csv (11524 rows)
+[2026-11-23 08:36:30] ALL DONE

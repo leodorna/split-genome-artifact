@@ -1,0 +1,24 @@
+== same algorithm: ours vs island-local EvoX (10 seeds each) ==
+  de-gen gen   10 best | evox 4.252e+12 [3.432e+12, 4.772e+12] | s1: 4.218e+12 (-0.8% [-6.4, +5.6], p=0.84)  s8: 4.218e+12 (-0.8% [-6.4, +5.6], p=0.84)  s8defer: 4.218e+12 (-0.8% [-6.4, +5.6], p=0.84)  v4s1: 4.218e+12 (-0.8% [-5.9, +5.7], p=0.99)  v4s8: 4.218e+12 (-0.8% [-5.9, +5.7], p=0.99)  s4w: 4.218e+12 (-0.8% [-6.4, +5.6], p=0.84)
+  de-gen gen  100 best | evox 1.925e+12 [1.803e+12, 2.028e+12] | s1: 1.933e+12 (+0.4% [-0.9, +2.4], p=0.47)  s8: 1.933e+12 (+0.4% [-0.9, +2.4], p=0.47)  s8defer: 1.933e+12 (+0.4% [-0.9, +2.4], p=0.47)  v4s1: 1.923e+12 (-0.1% [-2.2, +1.6], p=0.61)  v4s8: 1.923e+12 (-0.1% [-2.2, +1.6], p=0.61)  s4w: 1.933e+12 (+0.4% [-0.9, +2.4], p=0.47)
+  de-gen gen 1000 best | evox 6.535e+11 [6.062e+11, 7.207e+11] | s1: 6.672e+11 (+2.1% [-0.1, +4.9], p=0.05)  s8: 6.672e+11 (+2.1% [-0.3, +5.2], p=0.06)  s8defer: 6.688e+11 (+2.4% [-0.1, +5.3], p=0.06)  v4s1: 6.553e+11 (+0.3% [-2.7, +3.6], p=0.37)  v4s8: 6.553e+11 (+0.3% [-2.4, +3.6], p=0.35)  s4w: 6.688e+11 (+2.4% [-0.7, +4.9], p=0.10)
+  ga-gen gen   10 best | evox 6.013e+12 [5.691e+12, 6.272e+12] | s1: 5.953e+12 (-1.0% [-2.0, +0.5], p=0.12)  s8: 5.953e+12 (-1.0% [-2.0, +0.5], p=0.12)  s8defer: 5.953e+12 (-1.0% [-2.0, +0.5], p=0.12)  v4s1: 5.988e+12 (-0.4% [-1.9, +0.8], p=0.24)  v4s8: 5.988e+12 (-0.4% [-1.9, +0.8], p=0.24)  s4w: 5.953e+12 (-1.0% [-2.0, +0.5], p=0.12)
+  ga-gen gen  100 best | evox 2.13e+12 [1.8e+12, 2.371e+12] | s1: 2.077e+12 (-2.5% [-7.8, +5.2], p=0.70)  s8: 2.077e+12 (-2.5% [-7.8, +5.2], p=0.70)  s8defer: 2.077e+12 (-2.5% [-7.8, +5.2], p=0.70)  v4s1: 2.017e+12 (-5.3% [-10.7, -0.4], p=0.01)  v4s8: 2.017e+12 (-5.3% [-10.7, -0.4], p=0.01)  s4w: 2.077e+12 (-2.5% [-7.8, +5.2], p=0.70)
+  ga-gen gen 1000 best | evox 2.055e+11 [1.664e+11, 2.454e+11] | s1: 1.943e+11 (-5.4% [-10.4, +5.2], p=0.33)  s8: 1.976e+11 (-3.9% [-9.9, +6.9], p=0.36)  s8defer: 1.976e+11 (-3.9% [-9.9, +6.9], p=0.37)  v4s1: 1.891e+11 (-8.0% [-14.7, +1.7], p=0.01)  v4s8: 1.891e+11 (-8.0% [-14.5, +1.8], p=0.02)  s4w: 1.943e+11 (-5.4% [-10.2, +5.1], p=0.32)
+  smallest p over all 72 tests: 0.005; tests with p < 0.05: 7; smallest Holm-adjusted p: 0.38
+  gen   10: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-6.4%
+  gen  100: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-10.7%
+  gen 1000: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-14.7%
+  largest |median best - EvoX| / EvoX: 0.080 (best and mean); best fitness beyond 2%: de-gen s1 gen 1000 +2.1% (p=0.05), de-gen s8 gen 1000 +2.1% (p=0.06), de-gen s8defer gen 1000 +2.4% (p=0.06), de-gen s4w gen 1000 +2.4% (p=0.10), ga-gen s1 gen 100 -2.5% (p=0.70), ga-gen s8 gen 100 -2.5% (p=0.70), ga-gen s8defer gen 100 -2.5% (p=0.70), ga-gen v4s1 gen 100 -5.3% (p=0.01), ga-gen v4s8 gen 100 -5.3% (p=0.01), ga-gen s4w gen 100 -2.5% (p=0.70), ga-gen s1 gen 1000 -5.4% (p=0.33), ga-gen s8 gen 1000 -3.9% (p=0.36), ga-gen s8defer gen 1000 -3.9% (p=0.37), ga-gen v4s1 gen 1000 -8.0% (p=0.01), ga-gen v4s8 gen 1000 -8.0% (p=0.02), ga-gen s4w gen 1000 -5.4% (p=0.32)
+
+== layout equivalence: split vs unsplit, same seed ==
+  de-gen  s8       vs s1   : identical trajectory in 14 of 30 seeds; the others part at generations [242, 246, 385, 401, 402, 488, 499, 520, 563, 616, 898, 903, 923, 972, 976, 985]
+  de-gen  s8defer  vs s1   : identical trajectory in 13 of 30 seeds; the others part at generations [74, 242, 284, 401, 402, 420, 499, 520, 563, 616, 695, 720, 898, 903, 972, 976, 985]
+  de-gen  v4s8     vs v4s1 : identical trajectory in 19 of 30 seeds; the others part at generations [150, 438, 449, 608, 682, 720, 794, 804, 926, 957, 977]
+  de-gen  s4w      vs s1   : identical trajectory in 11 of 30 seeds; the others part at generations [194, 326, 331, 402, 411, 520, 563, 616, 641, 695, 788, 861, 883, 886, 923, 923, 972, 976, 985]
+  ga-gen  s8       vs s1   : identical trajectory in 5 of 30 seeds; the others part at generations [49, 116, 147, 159, 176, 193, 258, 305, 308, 332, 365, 394, 478, 491, 577, 581, 595, 622, 638, 663, 675, 779, 802, 877, 970]
+  ga-gen  s8defer  vs s1   : identical trajectory in 5 of 30 seeds; the others part at generations [49, 147, 159, 176, 193, 241, 258, 308, 332, 365, 394, 434, 463, 478, 491, 577, 581, 595, 638, 663, 671, 721, 779, 802, 877]
+  ga-gen  v4s8     vs v4s1 : identical trajectory in 10 of 30 seeds; the others part at generations [102, 113, 130, 157, 172, 277, 301, 360, 421, 454, 507, 518, 644, 713, 716, 728, 750, 767, 885, 927]
+  ga-gen  s4w      vs s1   : identical trajectory in 6 of 30 seeds; the others part at generations [49, 61, 112, 163, 272, 274, 305, 317, 358, 365, 394, 404, 434, 573, 581, 610, 614, 636, 671, 690, 721, 727, 747, 997]
+
+wrote quality_summary.csv, quality_layouts.csv, fig_quality.{pdf,png} in results/transfer/cec-f12/quality

@@ -1,0 +1,22 @@
+{
+  "description": "realistic population grid: I in {1,32,1024}, N in {64,256,1024}, I*N*D == 2**30 (constant gene budget) -- subset sweep_i1 of sweep_realistic.json",
+  "invariant": 1073741824,
+  "pv_cap": 0.01,
+  "tuples": [
+    [
+      1,
+      64,
+      16777216
+    ],
+    [
+      1,
+      256,
+      4194304
+    ],
+    [
+      1,
+      1024,
+      1048576
+    ]
+  ]
+}

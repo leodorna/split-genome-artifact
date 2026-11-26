@@ -1,0 +1,24 @@
+== same algorithm: ours vs island-local EvoX (10 seeds each) ==
+  de-gen gen   10 best | evox 7.244e+04 [6.245e+04, 7.957e+04] | s1: 7.203e+04 (-0.6% [-4.3, +3.3], p=0.76)  s8: 7.203e+04 (-0.6% [-4.3, +3.3], p=0.76)  s8defer: 7.203e+04 (-0.6% [-4.3, +3.3], p=0.76)  v4s1: 7.202e+04 (-0.6% [-3.9, +3.8], p=0.99)  v4s8: 7.202e+04 (-0.6% [-3.9, +3.8], p=0.99)  s4w: 7.203e+04 (-0.6% [-4.3, +3.3], p=0.76)
+  de-gen gen  100 best | evox 4.368e+04 [4.207e+04, 4.499e+04] | s1: 4.311e+04 (-1.3% [-2.6, +0.7], p=0.11)  s8: 4.311e+04 (-1.3% [-2.6, +0.7], p=0.11)  s8defer: 4.311e+04 (-1.3% [-2.6, +0.7], p=0.11)  v4s1: 4.322e+04 (-1.1% [-2.3, -0.2], p=0.00)  v4s8: 4.322e+04 (-1.1% [-2.3, -0.2], p=0.00)  s4w: 4.311e+04 (-1.3% [-2.6, +0.7], p=0.11)
+  de-gen gen 1000 best | evox 2.581e+04 [2.433e+04, 2.702e+04] | s1: 2.589e+04 (+0.3% [-1.1, +2.4], p=0.70)  s8: 2.597e+04 (+0.6% [-1.0, +2.8], p=0.53)  s8defer: 2.586e+04 (+0.2% [-1.3, +2.4], p=0.85)  v4s1: 2.579e+04 (-0.1% [-1.9, +1.8], p=0.72)  v4s8: 2.579e+04 (-0.1% [-2.0, +1.7], p=0.61)  s4w: 2.589e+04 (+0.3% [-1.1, +2.4], p=0.70)
+  ga-gen gen   10 best | evox 8.197e+04 [7.843e+04, 8.541e+04] | s1: 8.258e+04 (+0.7% [-1.0, +2.0], p=0.47)  s8: 8.258e+04 (+0.7% [-1.0, +2.0], p=0.47)  s8defer: 8.258e+04 (+0.7% [-1.0, +2.0], p=0.47)  v4s1: 8.25e+04 (+0.6% [-1.2, +1.8], p=0.65)  v4s8: 8.25e+04 (+0.6% [-1.2, +1.8], p=0.65)  s4w: 8.258e+04 (+0.7% [-1.0, +2.0], p=0.47)
+  ga-gen gen  100 best | evox 4.151e+04 [3.715e+04, 4.373e+04] | s1: 4.174e+04 (+0.6% [-2.9, +2.3], p=0.98)  s8: 4.174e+04 (+0.6% [-2.9, +2.3], p=0.98)  s8defer: 4.174e+04 (+0.6% [-2.9, +2.3], p=0.98)  v4s1: 4.166e+04 (+0.4% [-2.2, +3.0], p=0.54)  v4s8: 4.166e+04 (+0.4% [-2.2, +3.0], p=0.54)  s4w: 4.174e+04 (+0.6% [-2.9, +2.3], p=0.98)
+  ga-gen gen 1000 best | evox 1.45e+04 [1.338e+04, 1.567e+04] | s1: 1.475e+04 (+1.7% [-1.6, +4.5], p=0.45)  s8: 1.474e+04 (+1.7% [-2.6, +4.2], p=0.68)  s8defer: 1.474e+04 (+1.7% [-2.5, +4.7], p=0.64)  v4s1: 1.482e+04 (+2.2% [-1.5, +5.5], p=0.25)  v4s8: 1.484e+04 (+2.3% [-1.5, +5.7], p=0.17)  s4w: 1.477e+04 (+1.8% [-1.9, +4.2], p=0.55)
+  smallest p over all 72 tests: 0.004; tests with p < 0.05: 2; smallest Holm-adjusted p: 0.25
+  gen   10: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-4.3%
+  gen  100: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-3.0%
+  gen 1000: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-5.7%
+  largest |median best - EvoX| / EvoX: 0.023 (best and mean); best fitness beyond 2%: ga-gen v4s1 gen 1000 +2.2% (p=0.25), ga-gen v4s8 gen 1000 +2.3% (p=0.17)
+
+== layout equivalence: split vs unsplit, same seed ==
+  de-gen  s8       vs s1   : identical trajectory in 19 of 30 seeds; the others part at generations [368, 373, 447, 771, 839, 869, 892, 896, 954, 956, 961]
+  de-gen  s8defer  vs s1   : identical trajectory in 19 of 30 seeds; the others part at generations [161, 565, 735, 771, 773, 839, 869, 880, 896, 917, 961]
+  de-gen  v4s8     vs v4s1 : identical trajectory in 15 of 30 seeds; the others part at generations [126, 294, 642, 656, 664, 705, 777, 816, 860, 866, 876, 882, 938, 969, 997]
+  de-gen  s4w      vs s1   : identical trajectory in 22 of 30 seeds; the others part at generations [258, 319, 767, 788, 880, 884, 952, 963]
+  ga-gen  s8       vs s1   : identical trajectory in 1 of 30 seeds; the others part at generations [43, 77, 99, 104, 108, 116, 116, 124, 131, 132, 133, 156, 162, 203, 205, 234, 296, 297, 315, 339, 373, 382, 432, 434, 458, 490, 591, 615, 623]
+  ga-gen  s8defer  vs s1   : identical trajectory in 1 of 30 seeds; the others part at generations [43, 77, 97, 99, 104, 108, 116, 116, 124, 131, 132, 133, 156, 205, 257, 296, 297, 315, 339, 354, 358, 382, 410, 434, 458, 591, 623, 638, 644]
+  ga-gen  v4s8     vs v4s1 : identical trajectory in 4 of 30 seeds; the others part at generations [89, 113, 115, 118, 122, 146, 153, 193, 201, 205, 230, 266, 287, 296, 301, 363, 454, 547, 606, 722, 731, 864, 881, 916, 919, 947]
+  ga-gen  s4w      vs s1   : identical trajectory in 4 of 30 seeds; the others part at generations [43, 77, 97, 101, 104, 124, 127, 131, 133, 156, 169, 297, 315, 339, 355, 374, 382, 429, 434, 441, 490, 500, 509, 615, 647, 818]
+
+wrote quality_summary.csv, quality_layouts.csv, fig_quality.{pdf,png} in results/transfer/cec-f2/quality

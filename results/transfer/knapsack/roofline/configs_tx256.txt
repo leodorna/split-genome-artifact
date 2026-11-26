@@ -1,0 +1,6 @@
+heur ux-bf highdim_vec4 1 64 536870912 256 1 8
+heur ux-bf highdim_vec4 1 256 134217728 256 1 2
+heur ux-bf highdim_vec4 1 1024 33554432 256 1 1
+heur ux-bf highdim_vec4 32 64 16777216 256 1 1
+heur ux-bf highdim_vec4 32 256 4194304 256 1 1
+heur ux-bf highdim_vec4 32 1024 1048576 256 1 1

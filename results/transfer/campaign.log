@@ -1,0 +1,525 @@
+[2026-11-22 23:49:34] transfer campaign: FITS=(cec-f1 cec-f2 cec-f3 cec-f12 knapsack) STEPS=(kernels evox quality ncu) BIN=/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2
+[2026-11-22 23:49:34] cec-f1: kernels
+de-gen highdim done: 24584 rows
+de-gen highdim_vec4 done: 44806 rows
+ga-gen highdim done: 69389 rows
+ga-gen highdim_vec4 done: 89611 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f1/phase3_cec-f1.csv (89611 rows)
+[2026-11-23 01:05:48] cec-f1: evox
+de-gen I=1 N=64 D=16777216 done
+de-gen I=1 N=256 D=4194304 done
+de-gen I=1 N=1024 D=1048576 done
+de-gen I=32 N=64 D=524288 done
+de-gen I=32 N=256 D=131072 done
+de-gen I=32 N=1024 D=32768 done
+de-gen I=1024 N=64 D=16384 done
+de-gen I=1024 N=256 D=4096 done
+de-gen I=1024 N=1024 D=1024 done
+de-gen I=1 N=1024 D=1000 done
+de-gen I=32 N=256 D=1000 done
+de-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f1/evox/evox_gen_de-gen.csv
+ga-gen I=1 N=64 D=16777216 done
+ga-gen I=1 N=256 D=4194304 done
+ga-gen I=1 N=1024 D=1048576 done
+ga-gen I=32 N=64 D=524288 done
+ga-gen I=32 N=256 D=131072 done
+ga-gen I=32 N=1024 D=32768 done
+ga-gen I=1024 N=64 D=16384 done
+ga-gen I=1024 N=256 D=4096 done
+ga-gen I=1024 N=1024 D=1024 done
+ga-gen I=1 N=1024 D=1000 done
+ga-gen I=32 N=256 D=1000 done
+ga-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f1/evox/evox_gen_ga-gen.csv
+[2026-11-23 01:23:04] cec-f2: kernels
+de-gen highdim done: 24584 rows
+de-gen highdim_vec4 done: 44806 rows
+ga-gen highdim done: 69389 rows
+ga-gen highdim_vec4 done: 89611 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f2/phase3_cec-f2.csv (89611 rows)
+[2026-11-23 02:45:25] cec-f2: evox
+de-gen I=1 N=64 D=16777216 done
+de-gen I=1 N=256 D=4194304 done
+de-gen I=1 N=1024 D=1048576 done
+de-gen I=32 N=64 D=524288 done
+de-gen I=32 N=256 D=131072 done
+de-gen I=32 N=1024 D=32768 done
+de-gen I=1024 N=64 D=16384 done
+de-gen I=1024 N=256 D=4096 done
+de-gen I=1024 N=1024 D=1024 done
+de-gen I=1 N=1024 D=1000 done
+de-gen I=32 N=256 D=1000 done
+de-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f2/evox/evox_gen_de-gen.csv
+ga-gen I=1 N=64 D=16777216 done
+ga-gen I=1 N=256 D=4194304 done
+ga-gen I=1 N=1024 D=1048576 done
+ga-gen I=32 N=64 D=524288 done
+ga-gen I=32 N=256 D=131072 done
+ga-gen I=32 N=1024 D=32768 done
+ga-gen I=1024 N=64 D=16384 done
+ga-gen I=1024 N=256 D=4096 done
+ga-gen I=1024 N=1024 D=1024 done
+ga-gen I=1 N=1024 D=1000 done
+ga-gen I=32 N=256 D=1000 done
+ga-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f2/evox/evox_gen_ga-gen.csv
+[2026-11-23 03:03:13] cec-f3: kernels
+de-gen highdim done: 24584 rows
+de-gen highdim_vec4 done: 44806 rows
+ga-gen highdim done: 69389 rows
+ga-gen highdim_vec4 done: 89611 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f3/phase3_cec-f3.csv (89611 rows)
+[2026-11-23 04:26:11] cec-f3: evox
+de-gen I=1 N=64 D=16777216 done
+de-gen I=1 N=256 D=4194304 done
+de-gen I=1 N=1024 D=1048576 done
+de-gen I=32 N=64 D=524288 done
+de-gen I=32 N=256 D=131072 done
+de-gen I=32 N=1024 D=32768 done
+de-gen I=1024 N=64 D=16384 done
+de-gen I=1024 N=256 D=4096 done
+de-gen I=1024 N=1024 D=1024 done
+de-gen I=1 N=1024 D=1000 done
+de-gen I=32 N=256 D=1000 done
+de-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f3/evox/evox_gen_de-gen.csv
+ga-gen I=1 N=64 D=16777216 done
+ga-gen I=1 N=256 D=4194304 done
+ga-gen I=1 N=1024 D=1048576 done
+ga-gen I=32 N=64 D=524288 done
+ga-gen I=32 N=256 D=131072 done
+ga-gen I=32 N=1024 D=32768 done
+ga-gen I=1024 N=64 D=16384 done
+ga-gen I=1024 N=256 D=4096 done
+ga-gen I=1024 N=1024 D=1024 done
+ga-gen I=1 N=1024 D=1000 done
+ga-gen I=32 N=256 D=1000 done
+ga-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f3/evox/evox_gen_ga-gen.csv
+[2026-11-23 04:44:01] cec-f12: kernels
+de-gen highdim done: 24584 rows
+de-gen highdim_vec4 done: 44806 rows
+ga-gen highdim done: 69389 rows
+ga-gen highdim_vec4 done: 89611 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f12/phase3_cec-f12.csv (89611 rows)
+[2026-11-23 05:59:29] cec-f12: evox
+de-gen I=1 N=64 D=16777216 done
+de-gen I=1 N=256 D=4194304 done
+de-gen I=1 N=1024 D=1048576 done
+de-gen I=32 N=64 D=524288 done
+de-gen I=32 N=256 D=131072 done
+de-gen I=32 N=1024 D=32768 done
+de-gen I=1024 N=64 D=16384 done
+de-gen I=1024 N=256 D=4096 done
+de-gen I=1024 N=1024 D=1024 done
+de-gen I=1 N=1024 D=1000 done
+de-gen I=32 N=256 D=1000 done
+de-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f12/evox/evox_gen_de-gen.csv
+ga-gen I=1 N=64 D=16777216 done
+ga-gen I=1 N=256 D=4194304 done
+ga-gen I=1 N=1024 D=1048576 done
+ga-gen I=32 N=64 D=524288 done
+ga-gen I=32 N=256 D=131072 done
+ga-gen I=32 N=1024 D=32768 done
+ga-gen I=1024 N=64 D=16384 done
+ga-gen I=1024 N=256 D=4096 done
+ga-gen I=1024 N=1024 D=1024 done
+ga-gen I=1 N=1024 D=1000 done
+ga-gen I=32 N=256 D=1000 done
+ga-gen I=1024 N=64 D=1000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f12/evox/evox_gen_ga-gen.csv
+[2026-11-23 06:15:58] knapsack: kernels
+ux-bf highdim done: 24584 rows
+ux-bf highdim_vec4 done: 42061 rows
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/phase3_knapsack.csv (42061 rows)
+[2026-11-23 07:51:45] knapsack: evox
+ux-bf I=1 N=64 D=536870912 done
+ux-bf I=1 N=256 D=134217728 done
+ux-bf I=1 N=1024 D=33554432 done
+ux-bf I=32 N=64 D=16777216 done
+ux-bf I=32 N=256 D=4194304 done
+ux-bf I=32 N=1024 D=1048576 done
+ux-bf I=1024 N=64 D=524288 done
+ux-bf I=1024 N=256 D=131072 done
+ux-bf I=1024 N=1024 D=32768 done
+ux-bf I=1 N=1024 D=32000 done
+ux-bf I=32 N=256 D=32000 done
+ux-bf I=1024 N=64 D=32000 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/evox/evox_gen_ux-bf.csv
+[2026-11-23 08:09:14] cec-f1: convergence
+[08:10:07] de-gen done
+[08:11:03] ga-gen done
+[2026-11-23 08:11:03] cec-f2: convergence
+[08:11:56] de-gen done
+[08:12:52] ga-gen done
+[2026-11-23 08:12:52] cec-f3: convergence
+[08:13:45] de-gen done
+[08:14:41] ga-gen done
+[2026-11-23 08:14:41] cec-f12: convergence
+[08:15:32] de-gen done
+[08:16:26] ga-gen done
+[2026-11-23 08:16:26] knapsack: convergence
+[08:17:18] ux-bf done
+[2026-11-23 08:17:18] cec-f1: ncu at the heuristic's configurations
+/home/ldorneles/workdir/split-genome-artifact/scripts/ncu_roofline_v3.sh: line 19: /home/ldorneles/workdir/split-genome-artifact/scripts/roofline_metrics_v3.sh: No such file or directory
+== de-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+/home/ldorneles/workdir/split-genome-artifact/scripts/ncu_roofline_v3.sh: line 30: METRICS: unbound variable
+roofs: {'dram_GBps': 1481.334, 'l2_GBps': 6758.457, 'issue_GIPS': 2084.371, 'binary_rng_GIPS': 1163.874, 'binary_rng_draws_per_s': 4217320839504.835, 'binary_rng_vec4_GIPS': 1157.099, 'binary_rng_vec4_draws_per_s': 4426095200987.077, 'philox_draws_GIPS': 1083.83, 'philox_draws_draws_per_s': 4782358236080.178}
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f1/roofline/roofline_v3.csv (0 configs), roofline_ceilings_v3.csv (9 ceilings)
+[2026-11-23 08:17:19] cec-f2: ncu at the heuristic's configurations
+[2026-11-23 08:36:30] transfer campaign: FITS=(cec-f1 cec-f2 cec-f3 cec-f12 knapsack) STEPS=(ncu) BIN=/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2
+[2026-11-23 08:36:30] cec-f1: ncu at the heuristic's configurations
+== de-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+roofs: {'dram_GBps': 1481.334, 'l2_GBps': 6758.457, 'issue_GIPS': 2084.371, 'binary_rng_GIPS': 1163.874, 'binary_rng_draws_per_s': 4217320839504.835, 'binary_rng_vec4_GIPS': 1157.099, 'binary_rng_vec4_draws_per_s': 4426095200987.077, 'philox_draws_GIPS': 1083.83, 'philox_draws_draws_per_s': 4782358236080.178}
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f1/roofline/roofline_v3.csv (36 configs), roofline_ceilings_v3.csv (9 ceilings)
+[2026-11-23 08:37:43] cec-f2: ncu at the heuristic's configurations
+== de-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+roofs: {'dram_GBps': 1481.334, 'l2_GBps': 6758.457, 'issue_GIPS': 2084.371, 'binary_rng_GIPS': 1163.874, 'binary_rng_draws_per_s': 4217320839504.835, 'binary_rng_vec4_GIPS': 1157.099, 'binary_rng_vec4_draws_per_s': 4426095200987.077, 'philox_draws_GIPS': 1083.83, 'philox_draws_draws_per_s': 4782358236080.178}
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f2/roofline/roofline_v3.csv (36 configs), roofline_ceilings_v3.csv (9 ceilings)
+[2026-11-23 08:39:08] cec-f3: ncu at the heuristic's configurations
+== de-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+roofs: {'dram_GBps': 1481.334, 'l2_GBps': 6758.457, 'issue_GIPS': 2084.371, 'binary_rng_GIPS': 1163.874, 'binary_rng_draws_per_s': 4217320839504.835, 'binary_rng_vec4_GIPS': 1157.099, 'binary_rng_vec4_draws_per_s': 4426095200987.077, 'philox_draws_GIPS': 1083.83, 'philox_draws_draws_per_s': 4782358236080.178}
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f3/roofline/roofline_v3.csv (36 configs), roofline_ceilings_v3.csv (9 ceilings)
+[2026-11-23 08:40:33] cec-f12: ncu at the heuristic's configurations
+== de-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=4 (2 kernel/gen) ==
+   rc=0 kernels=2
+== de-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== de-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=64 D=16384 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=256 D=4096 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim I=1024 N=1024 D=1024 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=64 D=16777216 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ga-gen highdim_vec4 I=1 N=256 D=4194304 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=256 D=131072 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=32 N=1024 D=32768 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=64 D=16384 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=256 D=4096 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ga-gen highdim_vec4 I=1024 N=1024 D=1024 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+roofs: {'dram_GBps': 1481.334, 'l2_GBps': 6758.457, 'issue_GIPS': 2084.371, 'binary_rng_GIPS': 1163.874, 'binary_rng_draws_per_s': 4217320839504.835, 'binary_rng_vec4_GIPS': 1157.099, 'binary_rng_vec4_draws_per_s': 4426095200987.077, 'philox_draws_GIPS': 1083.83, 'philox_draws_draws_per_s': 4782358236080.178}
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/cec-f12/roofline/roofline_v3.csv (36 configs), roofline_ceilings_v3.csv (9 ceilings)
+[2026-11-23 08:41:38] knapsack: ncu at the heuristic's configurations
+== ux-bf highdim I=1 N=64 D=536870912 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=0 kernels=2
+== ux-bf highdim I=1 N=256 D=134217728 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=1 N=1024 D=33554432 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=32 N=64 D=16777216 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=32 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=32 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=1024 N=64 D=524288 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=1024 N=256 D=131072 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim I=1024 N=1024 D=32768 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim_vec4 I=1 N=64 D=536870912 tx=512 ty=1 cap=8 (2 kernel/gen) ==
+   rc=1 kernels=-2
+   WARNING: expected 2 kernels, see /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I1_N64_D536870912_tx512_ty1_cap8.log
+== ux-bf highdim_vec4 I=1 N=256 D=134217728 tx=512 ty=1 cap=2 (1 kernel/gen) ==
+   rc=1 kernels=-2
+   WARNING: expected 1 kernels, see /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I1_N256_D134217728_tx512_ty1_cap2.log
+== ux-bf highdim_vec4 I=1 N=1024 D=33554432 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=1 kernels=-2
+   WARNING: expected 1 kernels, see /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I1_N1024_D33554432_tx512_ty1_cap1.log
+== ux-bf highdim_vec4 I=32 N=64 D=16777216 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=1 kernels=-2
+   WARNING: expected 1 kernels, see /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I32_N64_D16777216_tx512_ty1_cap1.log
+== ux-bf highdim_vec4 I=32 N=256 D=4194304 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=1 kernels=-2
+   WARNING: expected 1 kernels, see /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I32_N256_D4194304_tx512_ty1_cap1.log
+== ux-bf highdim_vec4 I=32 N=1024 D=1048576 tx=512 ty=1 cap=1 (1 kernel/gen) ==
+   rc=1 kernels=-2
+   WARNING: expected 1 kernels, see /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I32_N1024_D1048576_tx512_ty1_cap1.log
+== ux-bf highdim_vec4 I=1024 N=64 D=524288 tx=256 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim_vec4 I=1024 N=256 D=131072 tx=64 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+== ux-bf highdim_vec4 I=1024 N=1024 D=32768 tx=32 ty=1 cap=1 (1 kernel/gen) ==
+   rc=0 kernels=1
+roofs: {'dram_GBps': 1481.334, 'l2_GBps': 6758.457, 'issue_GIPS': 2084.371, 'binary_rng_GIPS': 1163.874, 'binary_rng_draws_per_s': 4217320839504.835, 'binary_rng_vec4_GIPS': 1157.099, 'binary_rng_vec4_draws_per_s': 4426095200987.077, 'philox_draws_GIPS': 1083.83, 'philox_draws_draws_per_s': 4782358236080.178}
+no kernels in /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I1_N1024_D33554432_tx512_ty1_cap1.csv
+no kernels in /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I1_N256_D134217728_tx512_ty1_cap2.csv
+no kernels in /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I1_N64_D536870912_tx512_ty1_cap8.csv
+no kernels in /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I32_N1024_D1048576_tx512_ty1_cap1.csv
+no kernels in /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I32_N256_D4194304_tx512_ty1_cap1.csv
+no kernels in /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/raw/ux-bf_highdim_vec4_I32_N64_D16777216_tx512_ty1_cap1.csv
+wrote /home/ldorneles/workdir/split-genome-artifact/results/transfer/knapsack/roofline/roofline_v3.csv (12 configs), roofline_ceilings_v3.csv (9 ceilings)
+[2026-11-23 08:42:17] ALL DONE

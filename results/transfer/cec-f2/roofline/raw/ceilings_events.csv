@@ -1,0 +1,10 @@
+kernel,best_ms,work,work_unit
+copy_dram,5.8266,8589934592,bytes
+copy_l2,1.2973,8589934592,bytes
+issue_fp32,2.3194,151397597184,thread_chain_steps
+issue_int,12.6304,151397597184,thread_chain_steps
+issue_imad,4.7010,151397597184,thread_chain_steps
+issue_mix,7.6236,151397597184,thread_chain_steps
+philox_draws,1.7965,8589115392,draws
+binary_rng,8.3284,34896609280,draws
+binary_rng_vec4,7.9354,34896609280,draws

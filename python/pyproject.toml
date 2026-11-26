@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "step-bench"
+version = "0.1.0"
+description = "EvoX baselines of the split-genome kernel paper"
+requires-python = ">=3.10"
+dependencies = ["torch==2.14.0"]   # the paper's versions (README.md)
+
+[project.optional-dependencies]
+evox = ["evox==1.4.0"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+step-bench-generation = "step_bench.bench_generation:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["step_bench*"]

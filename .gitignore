@@ -1,0 +1,20 @@
+# build outputs and downloads
+code/bin/
+code/external/
+smoke/
+__pycache__/
+# written by reproduce_figures.sh (regenerated from the shipped data)
+results/rerun_v3/phase3_unified_final_v3.csv
+results/gpu2/phase3_gpu2_all.csv
+results/rerun_v3/analysis/
+results/gpu2/analysis/
+results/gpu2/score_gpu2_*
+*.pdf
+*.png
+# official CEC 2013 LSGO shifts (GPL-3.0; scripts/fetch_cec2013_shifts.sh)
+data/cec2013lsgo/
+# transfer campaign timing tables: shipped gzipped (reproduce_figures.sh unpacks them)
+results/transfer/**/phase3_*.csv
+check_speedup/
+# resume markers of scripts/transfer_campaign.sh (a re-run must not skip the steps)
+*.done

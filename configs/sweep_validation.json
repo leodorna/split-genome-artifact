@@ -1,0 +1,1 @@
+{"description": "validation of the revised launch heuristic (fixed before these cells were measured): dimensions that are not powers of two and are absent from the ablation and the transfer grid, few to many rows; binary operators use 32*D bits", "tuples": [[1, 128, 300], [1, 1024, 3000], [4, 256, 10000], [16, 512, 3000], [64, 128, 300], [1, 64, 100000], [8, 64, 30000]]}

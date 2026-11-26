@@ -1,0 +1,63 @@
+[2026-11-25 13:57:03] max-autotune-no-cudagraphs
+de-gen I=1 N=64 D=16777216 done
+de-gen I=1 N=256 D=4194304 done
+de-gen I=1 N=1024 D=1048576 done
+de-gen I=32 N=64 D=524288 done
+de-gen I=32 N=256 D=131072 done
+de-gen I=32 N=1024 D=32768 done
+de-gen I=1024 N=64 D=16384 done
+de-gen I=1024 N=256 D=4096 done
+de-gen I=1024 N=1024 D=1024 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/rerun_v3/evox_modes/max-autotune-no-cudagraphs/evox_gen_de-gen.csv
+ga-gen I=1 N=64 D=16777216 done
+ga-gen I=1 N=256 D=4194304 done
+ga-gen I=1 N=1024 D=1048576 done
+ga-gen I=32 N=64 D=524288 done
+ga-gen I=32 N=256 D=131072 done
+ga-gen I=32 N=1024 D=32768 done
+ga-gen I=1024 N=64 D=16384 done
+ga-gen I=1024 N=256 D=4096 done
+ga-gen I=1024 N=1024 D=1024 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/rerun_v3/evox_modes/max-autotune-no-cudagraphs/evox_gen_ga-gen.csv
+ux-bf I=1 N=64 D=536870912 done
+ux-bf I=1 N=256 D=134217728 done
+ux-bf I=1 N=1024 D=33554432 done
+ux-bf I=32 N=64 D=16777216 done
+ux-bf I=32 N=256 D=4194304 done
+ux-bf I=32 N=1024 D=1048576 done
+ux-bf I=1024 N=64 D=524288 done
+ux-bf I=1024 N=256 D=131072 done
+ux-bf I=1024 N=1024 D=32768 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/rerun_v3/evox_modes/max-autotune-no-cudagraphs/evox_gen_ux-bf.csv
+[2026-11-25 14:14:07] reduce-overhead
+de-gen I=1 N=64 D=16777216 done
+de-gen I=1 N=256 D=4194304 done
+de-gen I=1 N=1024 D=1048576 done
+de-gen I=32 N=64 D=524288 done
+de-gen I=32 N=256 D=131072 done
+de-gen I=32 N=1024 D=32768 done
+de-gen I=1024 N=64 D=16384 done
+de-gen I=1024 N=256 D=4096 done
+de-gen I=1024 N=1024 D=1024 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/rerun_v3/evox_modes/reduce-overhead/evox_gen_de-gen.csv
+ga-gen I=1 N=64 D=16777216 done
+ga-gen I=1 N=256 D=4194304 done
+ga-gen I=1 N=1024 D=1048576 done
+ga-gen I=32 N=64 D=524288 done
+ga-gen I=32 N=256 D=131072 done
+ga-gen I=32 N=1024 D=32768 done
+ga-gen I=1024 N=64 D=16384 done
+ga-gen I=1024 N=256 D=4096 done
+ga-gen I=1024 N=1024 D=1024 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/rerun_v3/evox_modes/reduce-overhead/evox_gen_ga-gen.csv
+ux-bf I=1 N=64 D=536870912 done
+ux-bf I=1 N=256 D=134217728 done
+ux-bf I=1 N=1024 D=33554432 done
+ux-bf I=32 N=64 D=16777216 done
+ux-bf I=32 N=256 D=4194304 done
+ux-bf I=32 N=1024 D=1048576 done
+ux-bf I=1024 N=64 D=524288 done
+ux-bf I=1024 N=256 D=131072 done
+ux-bf I=1024 N=1024 D=32768 done
+wrote /home/ldorneles/workdir/split-genome-artifact/results/rerun_v3/evox_modes/reduce-overhead/evox_gen_ux-bf.csv
+[2026-11-25 14:21:22] ALL DONE

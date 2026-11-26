@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the paper below."
+type: software
+title: "Evaluation artifact: split-genome GPU kernels for evolutionary algorithms"
+version: 1.0.0
+abstract: >-
+  Evaluation artifact of the paper "Split-Genome Layouts for Evolutionary Algorithms on
+  GPUs: Bottlenecks and Trade-offs at Million-Variable Scale": the CUDA C++ kernels, the
+  EvoX-based baselines, every raw timing and fitness trace behind the results, and the
+  scripts that regenerate the paper's figures, tables and numbers. Code under the MIT
+  license; data in results/ under CC BY 4.0.
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/leodorna/split-genome-artifact"
+keywords:
+  - evolutionary algorithms
+  - GPU
+  - CUDA
+  - differential evolution
+  - genetic algorithm
+  - large-scale optimization
+  - EvoX
+  - reproducibility
+authors:
+  - family-names: Dorneles
+    given-names: Leonardo da Luz
+    orcid: "https://orcid.org/0000-0003-4449-5570"
+    affiliation: "Instituto de Informática, Universidade Federal do Rio Grande do Sul"
+  - family-names: Dorn
+    given-names: Marcio
+    orcid: "https://orcid.org/0000-0001-8534-3480"
+    affiliation: "Instituto de Informática, Universidade Federal do Rio Grande do Sul"
+preferred-citation:
+  type: article
+  title: "Split-Genome Layouts for Evolutionary Algorithms on GPUs: Bottlenecks and Trade-offs at Million-Variable Scale"
+  authors:
+    - family-names: Dorneles
+      given-names: Leonardo da Luz
+      orcid: "https://orcid.org/0000-0003-4449-5570"
+    - family-names: Dorn
+      given-names: Marcio
+      orcid: "https://orcid.org/0000-0001-8534-3480"
+  status: submitted

@@ -1,0 +1,5 @@
+[2026-11-23 07:38:39] waiting for the campaign's quality step (results/transfer/knapsack/quality/.done)
+[2026-11-23 08:17:19] stopping the campaign (process group 349408) before its ncu step
+[2026-11-23 08:17:19] GPU idle; validation
+[2026-11-23 08:36:30] validation done; ncu step
+[2026-11-23 08:42:17] ALL DONE

@@ -1,0 +1,28 @@
+== same algorithm: ours vs island-local EvoX (10 seeds each) ==
+  de-gen gen   10 best | evox 275.5 [266.1, 284.6] | s1: 275 (-0.2% [-1.0, +0.6], p=0.58)  s8: 275 (-0.2% [-1.0, +0.6], p=0.58)  s8defer: 275 (-0.2% [-1.0, +0.6], p=0.58)  v4s1: 275.6 (+0.0% [-0.9, +0.7], p=0.97)  v4s8: 275.6 (+0.0% [-0.9, +0.7], p=0.97)
+  de-gen gen  100 best | evox 223.9 [217.7, 227.9] | s1: 222.9 (-0.4% [-1.3, +0.4], p=0.26)  s8: 222.9 (-0.4% [-1.3, +0.4], p=0.26)  s8defer: 222.9 (-0.4% [-1.3, +0.4], p=0.26)  v4s1: 223.2 (-0.3% [-0.8, +0.5], p=0.59)  v4s8: 223.2 (-0.3% [-0.8, +0.5], p=0.59)
+  de-gen gen 1000 best | evox 72.08 [67.49, 75.67] | s1: 71.73 (-0.5% [-2.1, +1.8], p=0.86)  s8: 71.24 (-1.2% [-2.5, +1.1], p=0.53)  s8defer: 71.27 (-1.1% [-2.3, +1.4], p=0.67)  v4s1: 71.53 (-0.8% [-2.3, +1.9], p=0.83)  v4s8: 71.72 (-0.5% [-2.1, +2.0], p=0.98)
+  ga-gen gen   10 best | evox 273.9 [266.5, 277.8] | s1: 273.2 (-0.3% [-0.9, +0.3], p=0.32)  s8: 273.2 (-0.3% [-0.9, +0.3], p=0.32)  s8defer: 273.2 (-0.3% [-0.9, +0.3], p=0.32)  v4s1: 273.7 (-0.1% [-1.0, +0.5], p=0.59)  v4s8: 273.7 (-0.1% [-1.0, +0.5], p=0.59)
+  ga-gen gen  100 best | evox 158.6 [142, 175.2] | s1: 159.4 (+0.5% [-2.9, +2.5], p=0.61)  s8: 159.4 (+0.5% [-2.9, +2.5], p=0.61)  s8defer: 159.4 (+0.5% [-2.9, +2.5], p=0.61)  v4s1: 159.7 (+0.7% [-2.5, +3.2], p=0.56)  v4s8: 159.7 (+0.7% [-2.5, +3.2], p=0.56)
+  ga-gen gen 1000 best | evox 65.25 [55.62, 75.57] | s1: 65.28 (+0.0% [-4.3, +3.2], p=0.49)  s8: 65 (-0.4% [-5.4, +3.3], p=0.36)  s8defer: 65.2 (-0.1% [-5.3, +3.3], p=0.36)  v4s1: 66.02 (+1.2% [-4.3, +4.6], p=0.68)  v4s8: 65.62 (+0.6% [-3.8, +3.7], p=0.73)
+  ux-bf gen   10 best | evox 1798 [1779, 1824] | s1: 1798 (+0.0% [-0.4, +0.3], p=0.98)  s8: 1798 (+0.0% [-0.4, +0.3], p=0.98)  s8defer: 1798 (+0.0% [-0.4, +0.3], p=0.98)  v4s1: 1800 (+0.1% [-0.2, +0.5], p=0.31)  v4s8: 1800 (+0.1% [-0.2, +0.5], p=0.31)
+  ux-bf gen  100 best | evox 1210 [1161, 1224] | s1: 1206 (-0.3% [-1.0, +0.3], p=0.29)  s8: 1206 (-0.3% [-1.0, +0.3], p=0.29)  s8defer: 1206 (-0.3% [-1.0, +0.3], p=0.29)  v4s1: 1203 (-0.5% [-0.8, -0.0], p=0.07)  v4s8: 1203 (-0.5% [-0.8, -0.0], p=0.07)
+  ux-bf gen 1000 best | evox 588.5 [568, 612] | s1: 586.5 (-0.3% [-1.2, +0.9], p=0.96)  s8: 586.5 (-0.3% [-1.2, +0.9], p=0.96)  s8defer: 586.5 (-0.3% [-1.2, +0.9], p=0.96)  v4s1: 590 (+0.3% [-0.7, +1.5], p=0.51)  v4s8: 590 (+0.3% [-0.7, +1.5], p=0.51)
+  smallest p over all 90 tests: 0.057; tests with p < 0.05: 0; smallest Holm-adjusted p: 1.00
+  gen   10: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-1.0%
+  gen  100: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-3.2%
+  gen 1000: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-5.4%
+  largest |median best - EvoX| / EvoX: 0.012 (best and mean); best fitness beyond 2%: none
+
+== layout equivalence: split vs unsplit, same seed ==
+  de-gen  s8       vs s1   : identical trajectory in 21 of 30 seeds; the others part at generations [151, 154, 273, 543, 638, 810, 828, 849, 986]
+  de-gen  s8defer  vs s1   : identical trajectory in 17 of 30 seeds; the others part at generations [154, 181, 273, 421, 489, 543, 559, 578, 638, 810, 828, 849, 975]
+  de-gen  v4s8     vs v4s1 : identical trajectory in 18 of 30 seeds; the others part at generations [112, 126, 179, 299, 349, 476, 512, 583, 739, 746, 960, 976]
+  ga-gen  s8       vs s1   : identical trajectory in 0 of 30 seeds; the others part at generations [85, 87, 89, 101, 113, 120, 123, 134, 141, 147, 159, 174, 178, 187, 217, 222, 281, 288, 314, 338, 413, 434, 491, 495, 561, 575, 630, 665, 731, 810]
+  ga-gen  s8defer  vs s1   : identical trajectory in 1 of 30 seeds; the others part at generations [85, 87, 89, 101, 113, 120, 123, 134, 141, 146, 147, 159, 174, 178, 187, 217, 222, 281, 288, 314, 434, 467, 491, 561, 575, 592, 665, 731, 810]
+  ga-gen  v4s8     vs v4s1 : identical trajectory in 3 of 30 seeds; the others part at generations [31, 57, 87, 97, 103, 147, 156, 161, 163, 164, 165, 175, 181, 184, 210, 215, 258, 264, 286, 321, 340, 348, 394, 526, 549, 644, 758]
+  ux-bf   s8       vs s1   : identical trajectory in 30 of 30 seeds
+  ux-bf   s8defer  vs s1   : identical trajectory in 30 of 30 seeds
+  ux-bf   v4s8     vs v4s1 : identical trajectory in 30 of 30 seeds
+
+wrote quality_summary.csv, quality_layouts.csv, fig_quality.{pdf,png} in results/rerun_v3/quality

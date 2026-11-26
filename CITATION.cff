@@ -2,16 +2,14 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite the paper below."
 type: software
 title: "Evaluation artifact: split-genome GPU kernels for evolutionary algorithms"
-version: 1.0.0
+version: 1.0.1
 abstract: >-
   Evaluation artifact of the paper "Split-Genome Layouts for Evolutionary Algorithms on
   GPUs: Bottlenecks and Trade-offs at Million-Variable Scale": the CUDA C++ kernels, the
   EvoX-based baselines, every raw timing and fitness trace behind the results, and the
   scripts that regenerate the paper's figures, tables and numbers. Code under the MIT
   license; data in results/ under CC BY 4.0.
-license:
-  - MIT
-  - CC-BY-4.0
+license: MIT   # Zenodo takes one license; the data license (CC BY 4.0) is in the abstract
 repository-code: "https://github.com/leodorna/split-genome-artifact"
 keywords:
   - evolutionary algorithms

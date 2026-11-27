@@ -1,0 +1,340 @@
+[22:10:50] de-gen done
+[22:15:27] ga-gen done
+[22:22:26] ux-bf done
+GPU: NVIDIA RTX PRO 6000 Blackwell Workstation Edition (188 SMs)
+case: de (--algo/--op de-gen in the commands below) scalar, sphere, I=1 N=64 D=1048576, 10 seeds per side
+timing, both sides: CUDA events around one generation, after warm-up, excluding compilation;
+  ours: one fused-kernel launch per generation, 5 warm-up + 10 timed; baseline: one compiled step, 5 warm-up + 20 timed
+
+ours: s=4 t_x=512 t_y=1 (4,512,1)
+  command (seed 0): /home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo de-gen --layout highdim --islands 1 --n 64 --d 1048576 --xthreads 512 --yblock 1 --hd-cap 4 --reps 10 --warmup 5 --seed 42
+  seed 0: 10 generations, median 690.8 us, min 636.8, max 708.3
+    708.3 706.0 691.7 700.0 693.1 650.8 645.0 636.8 689.8 673.3
+  seed 1: 10 generations, median 677.7 us, min 655.2, max 698.1
+    695.6 676.6 678.8 698.1 688.1 676.7 674.8 698.1 655.2 663.3
+  seed 2: 10 generations, median 687.4 us, min 638.0, max 734.6
+    726.7 734.6 697.2 705.4 687.9 686.8 680.9 638.0 679.8 654.2
+  seed 3: 10 generations, median 703.8 us, min 628.6, max 749.2
+    749.2 725.6 717.6 711.4 686.3 705.2 683.9 702.4 628.6 683.9
+  seed 4: 10 generations, median 687.5 us, min 671.4, max 731.0
+    719.7 731.0 706.3 712.0 685.9 689.2 671.7 679.8 671.4 677.5
+  seed 5: 10 generations, median 679.9 us, min 652.5, max 706.4
+    669.7 706.4 678.8 701.3 681.0 699.1 685.0 671.4 661.4 652.5
+  seed 6: 10 generations, median 679.9 us, min 621.4, max 703.5
+    661.1 686.8 621.4 647.1 678.1 689.0 681.8 703.5 664.4 700.3
+  seed 7: 10 generations, median 691.5 us, min 650.2, max 718.3
+    708.4 718.3 691.8 680.7 683.1 691.2 704.4 692.2 650.2 666.3
+  seed 8: 10 generations, median 678.2 us, min 647.2, max 727.8
+    725.5 727.8 698.1 678.8 674.9 666.3 680.9 647.2 675.6 677.7
+  seed 9: 10 generations, median 687.5 us, min 656.3, max 726.9
+    726.9 722.6 694.0 693.8 684.0 691.0 669.4 683.7 665.4 656.3
+  ours: 687.4 us per generation (median over 10 seeds of the per-seed medians)
+
+baseline: island-local EvoX, torch.compile max-autotune-no-cudagraphs (compiled once per seed)
+  command (seed 0, in python/): /home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op de-gen --n 64 --d 1048576 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs
+  seed 0: 20 generations, median 1539.4 us, min 1524.4, max 1573.4
+    1573.4 1540.1 1536.6 1531.1 1545.7 1533.9 1536.4 1563.1 1538.7 1528.5 1560.3 1525.2 1538.7 1541.3 1547.0 1528.5 1546.2 1524.4 1543.7 1551.5
+  seed 1: 20 generations, median 1539.6 us, min 1512.4, max 1883.0
+    1536.9 1545.7 1535.7 1540.9 1541.9 1569.4 1560.8 1533.2 1512.4 1531.0 1519.7 1538.3 1545.7 1518.9 1551.8 1518.8 1527.3 1883.0 1590.8 1567.1
+  seed 2: 20 generations, median 1539.2 us, min 1515.0, max 1563.2
+    1562.6 1547.0 1538.8 1548.0 1523.7 1552.2 1544.6 1545.6 1536.9 1530.0 1533.2 1515.0 1563.2 1526.1 1532.3 1550.7 1539.6 1532.3 1556.0 1528.4
+  seed 3: 20 generations, median 1543.2 us, min 1515.9, max 1579.6
+    1543.0 1552.2 1529.1 1566.2 1515.9 1533.0 1549.4 1579.6 1540.4 1542.4 1548.5 1555.6 1541.9 1541.5 1543.5 1551.6 1540.6 1551.8 1529.4 1551.8
+  seed 4: 20 generations, median 1545.2 us, min 1523.7, max 1588.4
+    1588.4 1561.4 1539.5 1534.5 1529.9 1531.1 1549.7 1544.4 1523.7 1531.9 1565.4 1551.7 1548.8 1547.9 1529.3 1543.8 1553.1 1544.7 1545.7 1551.9
+  seed 5: 20 generations, median 1547.6 us, min 1526.1, max 1574.3
+    1559.6 1544.9 1538.4 1558.6 1551.8 1540.9 1556.8 1559.9 1539.3 1553.2 1531.9 1532.2 1548.5 1540.6 1570.4 1546.7 1526.1 1574.3 1535.4 1549.8
+  seed 6: 20 generations, median 1551.2 us, min 1529.0, max 1576.9
+    1565.2 1562.2 1545.1 1559.3 1547.3 1576.9 1530.0 1536.3 1537.0 1529.0 1553.8 1553.8 1535.5 1551.7 1560.0 1550.7 1538.2 1548.6 1559.2 1552.7
+  seed 7: 20 generations, median 1543.9 us, min 1514.6, max 1827.0
+    1827.0 1580.2 1569.2 1529.2 1545.3 1596.8 1531.1 1550.6 1538.2 1514.6 1542.6 1536.4 1554.8 1536.5 1577.6 1538.8 1523.2 1529.4 1560.1 1568.2
+  seed 8: 20 generations, median 1544.1 us, min 1510.0, max 1559.6
+    1550.8 1547.6 1543.9 1545.2 1528.2 1541.1 1557.9 1543.4 1532.1 1551.4 1550.8 1544.2 1510.5 1559.6 1547.8 1510.0 1529.7 1548.7 1533.4 1535.5
+  seed 9: 20 generations, median 1542.7 us, min 1522.1, max 1558.0
+    1558.0 1550.2 1542.8 1528.7 1533.7 1549.3 1529.1 1554.8 1548.4 1543.3 1541.4 1533.2 1542.7 1529.1 1522.1 1533.2 1544.4 1557.7 1554.7 1532.3
+  baseline: 1543.6 us per generation (median over 10 seeds of the per-seed medians)
+
+speedup = baseline / ours = 1543.6 / 687.4 = 2.25x
+raw times: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/de_scalar_sphere_I1_N64_D1048576_4-512-1.times.csv; commands: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/de_scalar_sphere_I1_N64_D1048576_4-512-1.commands.txt
+paper: this case is not among the measured ones (results/speedup_reference.csv)
+GPU: NVIDIA RTX PRO 6000 Blackwell Workstation Edition (188 SMs)
+case: de (--algo/--op de-gen in the commands below) scalar, sphere, I=1 N=64 D=1048576, 10 seeds per side
+timing, both sides: CUDA events around one generation, after warm-up, excluding compilation;
+  ours: one fused-kernel launch per generation, 5 warm-up + 10 timed; baseline: one compiled step, 5 warm-up + 20 timed
+
+ours: s=1 t_x=512 t_y=1 (1,512,1)
+  command (seed 0): /home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo de-gen --layout highdim --islands 1 --n 64 --d 1048576 --xthreads 512 --yblock 1 --hd-cap 1 --reps 10 --warmup 5 --seed 42
+  seed 0: 10 generations, median 1293.8 us, min 1249.1, max 1312.5
+    1311.5 1312.5 1293.5 1302.1 1299.4 1255.0 1249.1 1252.4 1294.2 1279.4
+  seed 1: 10 generations, median 1284.8 us, min 1255.0, max 1301.2
+    1300.3 1276.6 1287.7 1301.2 1295.2 1272.7 1281.9 1299.9 1255.0 1269.3
+  seed 2: 10 generations, median 1289.0 us, min 1241.0, max 1344.9
+    1334.7 1344.9 1306.2 1310.1 1290.3 1287.8 1284.0 1241.0 1277.8 1254.7
+  seed 3: 10 generations, median 1307.0 us, min 1234.8, max 1355.4
+    1355.4 1328.0 1317.8 1318.7 1293.3 1307.5 1288.1 1306.4 1234.8 1287.9
+  seed 4: 10 generations, median 1291.3 us, min 1274.8, max 1335.0
+    1320.4 1335.0 1308.2 1311.5 1284.9 1297.7 1274.8 1279.7 1277.8 1275.6
+  seed 5: 10 generations, median 1280.9 us, min 1250.3, max 1315.6
+    1269.3 1315.6 1284.9 1302.2 1277.0 1303.8 1288.0 1275.6 1267.6 1250.3
+  seed 6: 10 generations, median 1284.3 us, min 1230.5, max 1308.4
+    1267.3 1287.0 1230.5 1248.5 1285.0 1283.7 1285.8 1308.4 1261.2 1294.2
+  seed 7: 10 generations, median 1295.2 us, min 1261.2, max 1324.8
+    1310.6 1324.8 1295.1 1283.8 1291.0 1296.3 1311.7 1295.3 1261.2 1266.6
+  seed 8: 10 generations, median 1283.5 us, min 1246.9, max 1330.5
+    1330.0 1330.5 1302.1 1283.4 1282.0 1268.5 1288.1 1246.9 1281.6 1283.7
+  seed 9: 10 generations, median 1290.7 us, min 1261.0, max 1334.1
+    1334.1 1327.8 1293.2 1298.0 1287.1 1295.5 1273.4 1288.1 1273.6 1261.0
+  ours: 1289.9 us per generation (median over 10 seeds of the per-seed medians)
+
+baseline: island-local EvoX, torch.compile max-autotune-no-cudagraphs (compiled once per seed)
+  command (seed 0, in python/): /home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op de-gen --n 64 --d 1048576 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs
+  seed 0: 20 generations, median 1543.2 us, min 1523.2, max 1639.9
+    1639.9 1559.8 1542.3 1541.6 1543.2 1542.3 1543.3 1567.3 1547.2 1533.0 1567.1 1532.5 1539.7 1539.6 1548.0 1529.4 1549.9 1523.2 1549.7 1553.2
+  seed 1: 20 generations, median 1538.0 us, min 1516.7, max 1567.5
+    1540.2 1550.3 1533.5 1537.3 1537.8 1567.5 1558.0 1536.5 1518.3 1532.0 1520.0 1542.4 1543.3 1519.1 1548.8 1523.1 1516.7 1538.1 1549.3 1556.1
+  seed 2: 20 generations, median 1540.1 us, min 1515.2, max 1561.2
+    1560.8 1542.0 1540.9 1551.0 1523.7 1549.4 1544.4 1543.6 1539.3 1529.6 1529.8 1515.2 1561.2 1523.9 1532.4 1544.5 1536.7 1532.1 1559.9 1521.3
+  seed 3: 20 generations, median 1545.8 us, min 1511.6, max 1576.4
+    1541.0 1555.9 1526.2 1561.9 1511.6 1534.8 1546.7 1576.4 1544.2 1541.2 1549.6 1547.6 1547.9 1542.6 1544.9 1556.8 1541.3 1554.8 1532.1 1552.7
+  seed 4: 20 generations, median 1551.3 us, min 1531.4, max 1831.1
+    1831.1 1591.6 1551.1 1535.8 1531.9 1535.0 1549.8 1547.8 1687.7 1547.9 1568.0 1555.7 1551.9 1551.5 1531.4 1545.8 1554.0 1542.5 1709.1 1562.0
+  seed 5: 20 generations, median 1545.8 us, min 1525.3, max 1622.4
+    1622.4 1559.0 1535.8 1554.5 1545.5 1536.2 1551.0 1560.2 1531.2 1553.7 1531.7 1531.4 1543.4 1538.6 1565.4 1550.0 1525.3 1569.2 1535.8 1546.2
+  seed 6: 20 generations, median 1553.4 us, min 1532.9, max 1583.8
+    1571.2 1565.4 1544.2 1572.1 1550.2 1583.8 1532.9 1535.0 1539.7 1535.6 1564.9 1556.3 1539.4 1555.5 1564.3 1550.0 1540.2 1552.3 1554.5 1562.7
+  seed 7: 20 generations, median 1543.9 us, min 1513.6, max 1575.8
+    1575.8 1544.4 1558.2 1524.6 1545.8 1529.1 1521.1 1545.5 1533.8 1513.6 1546.7 1543.4 1559.8 1539.9 1575.5 1539.5 1523.3 1526.2 1562.0 1567.2
+  seed 8: 20 generations, median 1551.1 us, min 1508.8, max 1791.9
+    1791.9 1583.8 1557.3 1548.5 1531.8 1540.1 1561.1 1624.7 1555.3 1557.2 1551.9 1550.4 1515.0 1557.9 1555.5 1508.8 1530.2 1548.0 1532.8 1537.5
+  seed 9: 20 generations, median 1541.5 us, min 1520.4, max 1780.7
+    1780.7 1585.6 1549.5 1529.3 1536.3 1557.7 1528.5 1722.7 1562.7 1544.6 1544.5 1529.4 1538.3 1530.0 1520.4 1524.3 1538.5 1554.1 1556.9 1530.8
+  baseline: 1544.8 us per generation (median over 10 seeds of the per-seed medians)
+
+speedup = baseline / ours = 1544.8 / 1289.9 = 1.20x
+raw times: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/de_scalar_sphere_I1_N64_D1048576_1-512-1.times.csv; commands: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/de_scalar_sphere_I1_N64_D1048576_1-512-1.commands.txt
+paper: this case is not among the measured ones (results/speedup_reference.csv)
+GPU: NVIDIA RTX PRO 6000 Blackwell Workstation Edition (188 SMs)
+case: sbx-pm (--algo/--op ga-gen in the commands below) scalar, sphere, I=1 N=64 D=1048576, 10 seeds per side
+timing, both sides: CUDA events around one generation, after warm-up, excluding compilation;
+  ours: one fused-kernel launch per generation, 5 warm-up + 10 timed; baseline: one compiled step, 5 warm-up + 20 timed
+
+ours: s=8 t_x=512 t_y=1 (8,512,1)
+  command (seed 0): /home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ga-gen --layout highdim --islands 1 --n 64 --d 1048576 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 42
+  seed 0: 10 generations, median 780.1 us, min 751.1, max 801.9
+    784.0 779.9 751.1 768.9 801.9 790.4 759.7 759.7 788.3 780.2
+  seed 1: 10 generations, median 755.9 us, min 733.0, max 792.2
+    792.2 745.2 763.4 737.2 767.9 748.3 780.0 733.0 767.6 745.3
+  seed 2: 10 generations, median 761.5 us, min 740.3, max 794.2
+    747.2 794.2 747.3 761.5 761.5 763.9 773.9 790.4 740.3 744.4
+  seed 3: 10 generations, median 759.1 us, min 723.8, max 820.8
+    762.7 820.8 798.6 796.5 744.4 723.8 743.2 772.1 735.1 755.5
+  seed 4: 10 generations, median 756.0 us, min 733.1, max 769.7
+    757.5 733.1 769.7 757.6 750.6 754.5 762.8 765.6 748.5 743.3
+  seed 5: 10 generations, median 761.2 us, min 729.0, max 796.4
+    729.0 796.4 755.5 786.2 775.1 743.3 789.5 757.7 764.8 751.5
+  seed 6: 10 generations, median 767.8 us, min 749.5, max 794.0
+    778.0 794.0 769.8 761.7 767.8 770.9 749.5 755.4 755.6 767.9
+  seed 7: 10 generations, median 784.7 us, min 751.2, max 825.4
+    790.2 778.0 783.9 825.4 770.9 789.8 761.6 751.2 785.4 792.4
+  seed 8: 10 generations, median 773.5 us, min 752.7, max 805.8
+    789.3 786.1 763.6 782.3 777.2 805.8 755.5 757.8 752.7 769.9
+  seed 9: 10 generations, median 765.8 us, min 738.1, max 812.0
+    800.4 812.0 804.2 757.5 769.1 738.1 765.9 753.6 746.4 765.7
+  ours: 763.7 us per generation (median over 10 seeds of the per-seed medians)
+
+baseline: island-local EvoX, torch.compile max-autotune-no-cudagraphs (compiled once per seed)
+  command (seed 0, in python/): /home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ga-gen --n 64 --d 1048576 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs
+  seed 0: 20 generations, median 1803.3 us, min 1771.0, max 1840.0
+    1840.0 1790.4 1788.6 1803.6 1804.9 1804.8 1785.8 1815.3 1798.8 1816.4 1816.6 1791.6 1803.0 1771.0 1809.2 1787.4 1804.2 1821.3 1788.8 1793.5
+  seed 1: 20 generations, median 1807.4 us, min 1781.2, max 1846.8
+    1824.9 1821.6 1806.8 1820.1 1830.8 1794.1 1846.8 1807.9 1824.5 1803.5 1781.2 1791.6 1803.0 1794.4 1786.5 1809.8 1805.9 1810.7 1799.5 1818.9
+  seed 2: 20 generations, median 1809.7 us, min 1793.6, max 2099.4
+    2099.4 1861.8 1824.8 1800.4 1815.4 1826.8 1794.5 1809.4 1823.8 1798.5 1805.3 1795.3 1827.0 1818.8 1802.7 1798.7 1835.5 1809.6 1809.7 1793.6
+  seed 3: 20 generations, median 1814.3 us, min 1771.1, max 2116.7
+    2116.7 1861.5 1831.2 1826.3 1820.8 1801.2 1803.9 1805.6 1818.0 1783.5 1813.1 1813.8 1795.5 1811.9 1771.1 1980.7 1830.0 1814.7 1819.1 1781.1
+  seed 4: 20 generations, median 1814.0 us, min 1781.9, max 1837.3
+    1837.3 1820.7 1825.2 1820.8 1826.5 1804.0 1821.1 1806.5 1810.2 1817.7 1809.9 1826.8 1809.8 1823.3 1781.9 1807.9 1798.7 1807.5 1836.4 1797.3
+  seed 5: 20 generations, median 1797.6 us, min 1781.3, max 2064.5
+    2064.5 1843.8 1817.9 1809.6 1822.0 1783.0 1802.6 1793.6 1793.5 1789.3 1810.9 1796.4 1798.8 1810.1 1795.9 1790.1 1795.6 1817.0 1793.8 1781.3
+  seed 6: 20 generations, median 1813.8 us, min 1781.4, max 2073.6
+    2073.6 1861.3 1847.4 1828.8 1812.6 1836.1 1818.1 1799.9 1796.4 1805.9 1805.0 1808.8 1820.3 1800.6 1815.0 1781.4 1818.4 1807.1 1801.6 1819.2
+  seed 7: 20 generations, median 1809.7 us, min 1769.1, max 1827.5
+    1827.5 1796.8 1818.2 1817.0 1807.6 1815.8 1806.0 1818.0 1804.5 1788.0 1813.5 1813.4 1811.9 1791.2 1815.9 1769.1 1793.8 1792.2 1820.1 1789.4
+  seed 8: 20 generations, median 1813.3 us, min 1765.8, max 1842.3
+    1814.2 1842.3 1811.7 1816.6 1830.0 1814.2 1812.5 1809.6 1787.8 1765.8 1811.8 1818.0 1807.6 1809.7 1820.0 1794.5 1814.8 1817.0 1820.2 1805.9
+  seed 9: 20 generations, median 1804.0 us, min 1779.2, max 1891.6
+    1891.6 1827.3 1803.3 1815.4 1801.3 1824.4 1825.2 1804.6 1816.5 1787.4 1798.6 1779.2 1824.4 1801.6 1790.5 1790.4 1821.2 1782.0 1825.4 1788.5
+  baseline: 1809.7 us per generation (median over 10 seeds of the per-seed medians)
+
+speedup = baseline / ours = 1809.7 / 763.7 = 2.37x
+raw times: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/sbx-pm_scalar_sphere_I1_N64_D1048576_8-512-1.times.csv; commands: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/sbx-pm_scalar_sphere_I1_N64_D1048576_8-512-1.commands.txt
+paper: this case is not among the measured ones (results/speedup_reference.csv)
+GPU: NVIDIA RTX PRO 6000 Blackwell Workstation Edition (188 SMs)
+case: sbx-pm (--algo/--op ga-gen in the commands below) scalar, sphere, I=1 N=64 D=1048576, 10 seeds per side
+timing, both sides: CUDA events around one generation, after warm-up, excluding compilation;
+  ours: one fused-kernel launch per generation, 5 warm-up + 10 timed; baseline: one compiled step, 5 warm-up + 20 timed
+
+ours: s=1 t_x=512 t_y=1 (1,512,1)
+  command (seed 0): /home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ga-gen --layout highdim --islands 1 --n 64 --d 1048576 --xthreads 512 --yblock 1 --hd-cap 1 --reps 10 --warmup 5 --seed 42
+  seed 0: 10 generations, median 2873.1 us, min 2864.5, max 2909.2
+    2876.3 2870.8 2873.1 2864.5 2909.2 2872.9 2868.8 2875.2 2899.8 2873.2
+  seed 1: 10 generations, median 2870.1 us, min 2822.0, max 2894.6
+    2894.6 2854.4 2877.3 2852.4 2891.4 2863.0 2885.2 2822.0 2877.2 2852.5
+  seed 2: 10 generations, median 2865.8 us, min 2834.3, max 2899.7
+    2842.2 2899.7 2860.8 2870.8 2854.5 2873.8 2875.3 2891.2 2834.3 2852.7
+  seed 3: 10 generations, median 2871.9 us, min 2830.0, max 2913.9
+    2872.9 2913.9 2887.5 2911.8 2833.3 2830.0 2856.9 2877.1 2830.1 2870.9
+  seed 4: 10 generations, median 2865.7 us, min 2836.9, max 2893.7
+    2866.9 2836.9 2885.3 2864.5 2866.8 2860.5 2877.4 2893.7 2858.7 2850.4
+  seed 5: 10 generations, median 2868.1 us, min 2837.3, max 2912.0
+    2837.3 2912.0 2846.2 2887.6 2885.2 2850.6 2873.2 2862.9 2879.4 2858.7
+  seed 6: 10 generations, median 2876.1 us, min 2850.5, max 2906.0
+    2895.3 2906.0 2874.9 2864.5 2869.1 2885.5 2850.5 2877.2 2868.9 2885.5
+  seed 7: 10 generations, median 2881.4 us, min 2860.7, max 2932.5
+    2897.9 2862.7 2889.1 2932.5 2877.4 2895.6 2877.3 2860.7 2883.5 2879.4
+  seed 8: 10 generations, median 2880.3 us, min 2867.0, max 2922.3
+    2901.8 2887.5 2869.0 2893.7 2887.5 2922.3 2867.0 2870.1 2873.1 2872.9
+  seed 9: 10 generations, median 2872.2 us, min 2824.0, max 2911.8
+    2895.5 2911.8 2909.9 2877.2 2870.9 2824.0 2871.1 2847.4 2858.7 2873.2
+  ours: 2872.0 us per generation (median over 10 seeds of the per-seed medians)
+
+baseline: island-local EvoX, torch.compile max-autotune-no-cudagraphs (compiled once per seed)
+  command (seed 0, in python/): /home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ga-gen --n 64 --d 1048576 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs
+  seed 0: 20 generations, median 1807.4 us, min 1770.8, max 2108.8
+    2108.8 1819.1 1806.1 1816.1 1808.3 1804.4 1789.0 1806.5 1791.2 1815.9 1826.2 1794.6 1811.0 1770.8 1811.2 1793.5 1810.0 1823.3 1802.1 1795.2
+  seed 1: 20 generations, median 1813.4 us, min 1780.0, max 2050.1
+    2050.1 1851.0 1825.5 1829.1 1840.2 1806.5 1843.6 1805.5 1833.1 1812.8 1780.0 1792.1 1797.5 1788.4 1787.2 1798.4 1814.0 1819.0 1802.7 1816.0
+  seed 2: 20 generations, median 1810.9 us, min 1788.4, max 1835.4
+    1834.6 1816.2 1812.5 1799.5 1812.1 1828.5 1788.4 1809.8 1833.1 1798.2 1800.7 1797.1 1835.4 1815.8 1801.4 1806.9 1823.1 1799.6 1814.0 1796.4
+  seed 3: 20 generations, median 1809.3 us, min 1776.6, max 1855.9
+    1855.9 1822.4 1821.9 1815.6 1816.7 1804.4 1809.8 1803.6 1822.8 1792.9 1822.2 1812.9 1796.3 1808.8 1776.6 1787.4 1818.9 1805.6 1803.9 1782.3
+  seed 4: 20 generations, median 1814.8 us, min 1788.2, max 1851.5
+    1851.5 1812.3 1826.4 1820.3 1828.0 1804.1 1820.0 1812.7 1805.4 1820.0 1804.7 1825.2 1810.8 1817.0 1788.2 1801.6 1804.7 1826.3 1851.5 1799.4
+  seed 5: 20 generations, median 1803.2 us, min 1782.1, max 1828.4
+    1825.3 1808.4 1803.4 1810.7 1828.4 1786.9 1801.6 1791.5 1799.2 1792.3 1807.9 1803.1 1804.2 1813.4 1806.8 1796.4 1793.2 1812.8 1793.7 1782.1
+  seed 6: 20 generations, median 1808.6 us, min 1779.0, max 1832.2
+    1832.2 1819.9 1822.5 1827.6 1807.2 1827.0 1814.5 1796.4 1796.1 1803.2 1798.8 1810.0 1825.9 1793.2 1804.8 1779.0 1823.0 1802.6 1806.8 1825.2
+  seed 7: 20 generations, median 1815.6 us, min 1770.0, max 2060.4
+    2060.4 1834.9 1827.1 1820.5 1805.7 1812.0 1806.8 1891.9 1816.4 1797.3 1884.6 1832.0 1818.0 1789.2 1823.3 1770.0 1786.4 1784.1 1814.8 1780.2
+  seed 8: 20 generations, median 1811.4 us, min 1768.1, max 1831.1
+    1806.5 1824.8 1810.8 1814.0 1831.1 1819.8 1812.6 1811.8 1787.2 1768.1 1807.6 1816.7 1811.0 1807.7 1819.4 1797.8 1809.8 1816.9 1820.1 1807.9
+  seed 9: 20 generations, median 1817.5 us, min 1784.1, max 2091.2
+    1897.7 1825.3 1805.3 1804.1 1785.0 1820.7 1826.2 1804.8 2091.2 1833.8 1814.8 1787.0 1820.9 1884.1 1815.8 1801.1 1819.1 1784.1 1832.5 1787.6
+  baseline: 1811.2 us per generation (median over 10 seeds of the per-seed medians)
+
+speedup = baseline / ours = 1811.2 / 2872.0 = 0.63x
+raw times: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/sbx-pm_scalar_sphere_I1_N64_D1048576_1-512-1.times.csv; commands: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/sbx-pm_scalar_sphere_I1_N64_D1048576_1-512-1.commands.txt
+paper: this case is not among the measured ones (results/speedup_reference.csv)
+GPU: NVIDIA RTX PRO 6000 Blackwell Workstation Edition (188 SMs)
+case: ux-bf scalar, onemax, I=1 N=64 D=1048576 (33554432 bits), 10 seeds per side
+timing, both sides: CUDA events around one generation, after warm-up, excluding compilation;
+  ours: one fused-kernel launch per generation, 5 warm-up + 10 timed; baseline: one compiled step, 5 warm-up + 20 timed
+
+ours: s=8 t_x=512 t_y=1 (8,512,1)
+  command (seed 0): /home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 42
+  seed 0: 10 generations, median 1006.7 us, min 980.7, max 1061.8
+    997.0 999.4 1009.1 984.6 1011.3 980.7 1004.4 1032.0 1037.1 1061.8
+  seed 1: 10 generations, median 983.1 us, min 947.9, max 1017.4
+    947.9 990.6 959.8 975.6 1017.4 999.1 1012.8 962.3 1015.6 953.2
+  seed 2: 10 generations, median 995.0 us, min 950.3, max 1017.4
+    950.3 995.1 1013.7 994.8 974.4 978.6 1007.3 1017.4 966.5 1001.2
+  seed 3: 10 generations, median 997.4 us, min 968.4, max 1021.8
+    987.9 968.4 1001.0 1003.3 1019.9 993.8 991.2 1021.8 980.8 1009.7
+  seed 4: 10 generations, median 1003.8 us, min 975.7, max 1038.0
+    1008.5 984.8 978.5 1012.4 999.0 975.7 1014.6 975.7 1038.0 1025.5
+  seed 5: 10 generations, median 985.4 us, min 952.4, max 1017.3
+    952.4 1017.3 980.4 1015.8 960.3 1004.5 986.0 984.4 1001.3 984.9
+  seed 6: 10 generations, median 1003.3 us, min 966.3, max 1031.8
+    1021.4 1018.7 966.3 994.0 1031.8 974.5 1011.7 994.8 972.4 1026.7
+  seed 7: 10 generations, median 992.9 us, min 954.0, max 1015.6
+    1013.3 974.7 992.9 993.0 972.3 989.0 1005.1 954.0 1015.6 1003.3
+  seed 8: 10 generations, median 1009.2 us, min 952.4, max 1027.7
+    952.4 987.9 1007.1 1011.4 1017.6 1025.7 966.2 1024.8 1001.2 1027.7
+  seed 9: 10 generations, median 997.9 us, min 963.4, max 1028.7
+    986.8 996.9 982.3 1001.2 994.8 963.4 998.8 1021.7 1028.7 1017.6
+  ours: 997.6 us per generation (median over 10 seeds of the per-seed medians)
+
+baseline: island-local EvoX, torch.compile max-autotune-no-cudagraphs (compiled once per seed)
+  command (seed 0, in python/): /home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs
+  seed 0: 20 generations, median 5295.8 us, min 5258.9, max 5340.8
+    5277.1 5261.4 5286.4 5303.6 5270.9 5277.9 5263.9 5258.9 5280.4 5303.7 5274.1 5288.5 5305.1 5319.1 5326.6 5330.4 5303.1 5319.4 5328.7 5340.8
+  seed 1: 20 generations, median 5318.6 us, min 5298.2, max 5342.4
+    5334.9 5303.1 5298.2 5319.4 5299.3 5314.3 5321.9 5317.8 5319.3 5342.4 5320.9 5309.5 5304.6 5311.6 5325.2 5318.6 5308.4 5322.9 5318.5 5340.2
+  seed 2: 20 generations, median 5321.0 us, min 5306.8, max 5375.9
+    5363.0 5375.9 5329.8 5319.4 5308.7 5335.8 5311.9 5330.4 5337.8 5327.8 5314.0 5331.7 5312.9 5335.6 5307.1 5322.5 5314.9 5318.1 5318.4 5306.8
+  seed 3: 20 generations, median 5321.5 us, min 5306.7, max 5350.0
+    5344.6 5321.5 5308.1 5324.5 5325.0 5340.7 5309.5 5332.5 5312.9 5331.4 5310.0 5306.7 5321.3 5318.4 5330.2 5309.1 5321.5 5308.0 5336.8 5350.0
+  seed 4: 20 generations, median 5329.5 us, min 5306.7, max 5369.5
+    5369.5 5359.6 5339.1 5338.3 5326.6 5329.5 5306.7 5326.7 5318.0 5319.8 5317.6 5333.6 5323.3 5351.4 5341.5 5327.9 5320.0 5329.5 5333.6 5344.8
+  seed 5: 20 generations, median 5331.4 us, min 5300.9, max 5386.2
+    5386.2 5369.8 5317.3 5329.1 5306.6 5335.6 5320.0 5333.5 5331.2 5343.3 5300.9 5331.6 5332.8 5330.6 5318.1 5335.1 5336.7 5323.3 5328.3 5343.9
+  seed 6: 20 generations, median 5332.3 us, min 5302.9, max 5391.5
+    5391.5 5364.4 5332.3 5366.9 5333.1 5316.3 5317.9 5328.1 5320.3 5339.3 5309.9 5318.1 5343.2 5332.3 5302.9 5331.7 5328.6 5350.1 5344.7 5340.1
+  seed 7: 20 generations, median 5330.9 us, min 5306.8, max 5359.3
+    5348.9 5329.2 5332.8 5337.7 5332.0 5359.3 5313.4 5329.9 5325.1 5316.4 5337.5 5342.7 5322.4 5329.4 5306.8 5321.3 5316.1 5336.1 5336.5 5332.5
+  seed 8: 20 generations, median 5323.8 us, min 5301.8, max 5368.5
+    5368.5 5356.1 5319.9 5320.3 5323.0 5324.7 5301.8 5311.0 5312.1 5325.1 5317.4 5305.8 5308.0 5326.1 5332.4 5335.4 5307.8 5329.2 5325.3 5336.7
+  seed 9: 20 generations, median 5328.4 us, min 5308.0, max 5388.2
+    5388.2 5361.8 5316.4 5342.4 5345.1 5330.0 5325.0 5325.4 5308.0 5346.8 5336.7 5323.6 5326.7 5322.1 5318.0 5340.8 5309.1 5339.6 5320.6 5337.2
+  baseline: 5326.1 us per generation (median over 10 seeds of the per-seed medians)
+
+speedup = baseline / ours = 5326.1 / 997.6 = 5.34x
+raw times: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/ux-bf_scalar_onemax_I1_N64_D1048576_8-512-1.times.csv; commands: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/ux-bf_scalar_onemax_I1_N64_D1048576_8-512-1.commands.txt
+paper: this case is not among the measured ones (results/speedup_reference.csv)
+GPU: NVIDIA RTX PRO 6000 Blackwell Workstation Edition (188 SMs)
+case: ux-bf scalar, onemax, I=1 N=64 D=1048576 (33554432 bits), 10 seeds per side
+timing, both sides: CUDA events around one generation, after warm-up, excluding compilation;
+  ours: one fused-kernel launch per generation, 5 warm-up + 10 timed; baseline: one compiled step, 5 warm-up + 20 timed
+
+ours: s=1 t_x=512 t_y=1 (1,512,1)
+  command (seed 0): /home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 1 --reps 10 --warmup 5 --seed 42
+  seed 0: 10 generations, median 3433.1 us, min 3407.4, max 3498.8
+    3432.4 3423.0 3433.8 3407.4 3444.4 3421.1 3432.2 3458.7 3471.0 3498.8
+  seed 1: 10 generations, median 3415.2 us, min 3389.0, max 3456.8
+    3391.1 3417.7 3389.0 3412.6 3454.6 3438.4 3447.5 3392.3 3456.8 3390.0
+  seed 2: 10 generations, median 3429.2 us, min 3389.1, max 3452.5
+    3389.1 3432.2 3452.5 3426.3 3405.3 3415.8 3443.6 3446.6 3422.1 3433.3
+  seed 3: 10 generations, median 3426.6 us, min 3401.3, max 3458.2
+    3422.0 3401.3 3432.1 3423.9 3454.9 3423.1 3429.4 3458.2 3420.0 3444.7
+  seed 4: 10 generations, median 3436.6 us, min 3400.4, max 3475.3
+    3435.7 3423.9 3415.5 3457.0 3440.4 3418.9 3437.4 3400.4 3475.3 3461.9
+  seed 5: 10 generations, median 3423.5 us, min 3403.4, max 3458.6
+    3403.4 3458.6 3421.7 3446.8 3405.4 3437.4 3418.7 3423.9 3438.1 3423.0
+  seed 6: 10 generations, median 3433.7 us, min 3401.0, max 3469.0
+    3458.7 3457.8 3401.0 3415.4 3469.0 3417.8 3441.4 3426.1 3417.9 3461.2
+  seed 7: 10 generations, median 3426.0 us, min 3394.4, max 3456.8
+    3448.3 3400.5 3425.8 3426.1 3407.4 3437.4 3440.2 3394.4 3456.8 3422.8
+  seed 8: 10 generations, median 3443.3 us, min 3386.9, max 3470.1
+    3386.9 3428.1 3440.2 3446.5 3450.7 3464.0 3402.8 3462.0 3432.2 3470.1
+  seed 9: 10 generations, median 3431.5 us, min 3401.3, max 3458.8
+    3419.9 3423.7 3421.7 3440.4 3433.9 3401.3 3429.2 3454.8 3458.8 3451.7
+  ours: 3430.4 us per generation (median over 10 seeds of the per-seed medians)
+
+baseline: island-local EvoX, torch.compile max-autotune-no-cudagraphs (compiled once per seed)
+  command (seed 0, in python/): /home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs
+  seed 0: 20 generations, median 5330.2 us, min 5303.4, max 5360.3
+    5357.0 5322.5 5331.7 5344.4 5303.4 5336.4 5303.9 5314.0 5312.1 5357.1 5316.4 5325.3 5323.4 5341.8 5334.7 5346.0 5323.5 5334.4 5328.6 5360.3
+  seed 1: 20 generations, median 5330.6 us, min 5306.9, max 5353.7
+    5353.7 5343.7 5326.4 5337.2 5314.3 5334.7 5331.0 5318.2 5327.3 5337.6 5332.5 5333.7 5317.2 5310.1 5337.0 5328.4 5322.0 5330.2 5306.9 5350.9
+  seed 2: 20 generations, median 5329.2 us, min 5312.9, max 5350.6
+    5340.9 5350.6 5337.0 5333.3 5327.6 5328.9 5312.9 5347.0 5331.2 5339.9 5323.3 5328.3 5315.1 5332.5 5329.5 5338.9 5328.4 5319.5 5321.2 5317.2
+  seed 3: 20 generations, median 5328.2 us, min 5312.9, max 5379.1
+    5379.1 5347.9 5333.5 5341.4 5316.4 5331.6 5319.7 5339.8 5328.1 5340.7 5315.9 5321.3 5322.8 5316.8 5324.4 5312.9 5332.5 5317.8 5328.3 5339.6
+  seed 4: 20 generations, median 5330.2 us, min 5310.8, max 5349.2
+    5349.2 5323.1 5325.1 5326.9 5321.2 5336.9 5319.4 5335.2 5331.3 5328.5 5312.8 5337.3 5310.8 5334.4 5336.0 5335.2 5329.1 5328.1 5348.3 5337.5
+  seed 5: 20 generations, median 5333.4 us, min 5302.8, max 5359.5
+    5351.3 5355.8 5332.0 5340.2 5302.8 5332.6 5327.6 5325.7 5324.1 5359.5 5321.2 5336.8 5330.7 5340.6 5334.1 5340.7 5324.4 5335.6 5330.7 5346.0
+  seed 6: 20 generations, median 5327.9 us, min 5307.4, max 5353.8
+    5346.4 5346.7 5325.5 5347.3 5324.7 5320.8 5307.4 5328.4 5329.4 5346.6 5314.1 5320.0 5332.5 5323.3 5315.2 5333.8 5325.0 5353.8 5338.3 5327.5
+  seed 7: 20 generations, median 5334.9 us, min 5313.0, max 5352.4
+    5326.2 5350.2 5326.2 5324.9 5318.8 5344.3 5313.0 5329.4 5335.5 5319.2 5344.8 5341.5 5346.0 5338.7 5321.4 5346.6 5334.3 5352.4 5333.4 5342.2
+  seed 8: 20 generations, median 5327.4 us, min 5300.8, max 5370.8
+    5370.8 5362.8 5332.2 5330.1 5330.7 5305.6 5304.4 5334.3 5320.3 5330.0 5327.4 5313.1 5300.8 5319.2 5317.7 5325.5 5306.8 5328.7 5327.3 5329.3
+  seed 9: 20 generations, median 5330.4 us, min 5297.9, max 5353.3
+    5353.3 5347.2 5331.2 5343.4 5336.6 5321.9 5319.3 5336.4 5305.6 5331.7 5313.4 5297.9 5332.2 5315.9 5322.5 5333.6 5307.1 5329.6 5320.2 5332.4
+  baseline: 5330.2 us per generation (median over 10 seeds of the per-seed medians)
+
+speedup = baseline / ours = 5330.2 / 3430.4 = 1.55x
+raw times: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/ux-bf_scalar_onemax_I1_N64_D1048576_1-512-1.times.csv; commands: /home/ldorneles/workdir/split-genome-artifact/results/largeD/timing/ux-bf_scalar_onemax_I1_N64_D1048576_1-512-1.commands.txt
+paper: this case is not among the measured ones (results/speedup_reference.csv)
+[22:26:57] all done

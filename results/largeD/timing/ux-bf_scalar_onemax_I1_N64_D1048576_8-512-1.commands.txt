@@ -1,0 +1,40 @@
+# ours, seed 0
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 42 --dump-times /tmp/tmp4x_3_nik.txt
+# ours, seed 1
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 1000045 --dump-times /tmp/tmpo6x_m4jz.txt
+# ours, seed 2
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 2000048 --dump-times /tmp/tmp3stadu9t.txt
+# ours, seed 3
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 3000051 --dump-times /tmp/tmp9ydrya2n.txt
+# ours, seed 4
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 4000054 --dump-times /tmp/tmp6jwni38t.txt
+# ours, seed 5
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 5000057 --dump-times /tmp/tmpchyaghco.txt
+# ours, seed 6
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 6000060 --dump-times /tmp/tmpjpm609o6.txt
+# ours, seed 7
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 7000063 --dump-times /tmp/tmpru4v_m95.txt
+# ours, seed 8
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 8000066 --dump-times /tmp/tmpe4sfie2s.txt
+# ours, seed 9
+/home/ldorneles/workdir/split-genome-artifact/code/bin/bench_generation_v2 --mode generation --algo ux-bf --layout highdim --islands 1 --n 64 --d 33554432 --xthreads 512 --yblock 1 --hd-cap 8 --reps 10 --warmup 5 --seed 9000069 --dump-times /tmp/tmpdye7zijv.txt
+# baseline, seed 0
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 0 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpgtfkafot.txt
+# baseline, seed 1
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 1 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpnjx55ql6.txt
+# baseline, seed 2
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 2 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmp8nb6uljt.txt
+# baseline, seed 3
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 3 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpz67x2l10.txt
+# baseline, seed 4
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 4 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpom8hp8eu.txt
+# baseline, seed 5
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 5 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmph_gvu0f3.txt
+# baseline, seed 6
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 6 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmph3_k8sx1.txt
+# baseline, seed 7
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 7 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpyy6fnec4.txt
+# baseline, seed 8
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 8 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpm90vdbkg.txt
+# baseline, seed 9
+/home/ldorneles/miniconda3/envs/blackwell_env/bin/python3 -m step_bench.bench_generation --op ux-bf --n 64 --d 33554432 --islands 1 --seed 9 --generations 20 --warmup 5 --compiled-only --compile-mode max-autotune-no-cudagraphs --dump-times /tmp/tmpkbps0kqw.txt

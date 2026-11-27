@@ -14,7 +14,8 @@
 # FITNESS=knapsack runs ux-bf on the 0/1 knapsack instead of OneMax.
 # Transfer-campaign overrides: QD (real-valued D, 1024), QDBIN (bits, 4096),
 # KARGS / PARGS (extra kernel / baseline flags, e.g. the same --shift-file for both),
-# EXTRA_CONFIGS (more "cfg layout cap tx [flags]" lines), SEED0 (first seed index, 0:
+# EXTRA_CONFIGS (more "cfg layout cap tx [flags]" lines), CONFIGS (replaces the five),
+# I and N (the cell, 4 and 64), ONLY_OPS (a subset of the operators), SEED0 (first seed index, 0:
 # with SEED0=10 SEEDS=30, adds seeds 10..29 to an existing run of 10).
 # Output: OUT/<op>_<config>_<seed>.csv (gen,best,mean). Run inside blackwell_env.
 set -uo pipefail
@@ -23,18 +24,19 @@ SB="$(cd "$HERE/.." && pwd)"
 ROOT="$SB"
 BIN="$ROOT/code/bin/bench_generation_v2"
 OUT="${OUT:-$SB/results/rerun_v3/quality}"
-SEEDS="${SEEDS:-10}"; SEED0="${SEED0:-0}"; GENS="${GENS:-1000}"; I=4; N=64
+SEEDS="${SEEDS:-10}"; SEED0="${SEED0:-0}"; GENS="${GENS:-1000}"; I="${I:-4}"; N="${N:-64}"
 FITNESS="${FITNESS:-}"; OPS="de-gen ga-gen ux-bf"; FIT_ARGS=(); PROB_ARGS=()
 [ -n "$FITNESS" ] && { OPS="de-gen ga-gen"; FIT_ARGS=(--fitness "$FITNESS"); PROB_ARGS=(--problem "$FITNESS"); }
 [ "$FITNESS" = knapsack ] && OPS="ux-bf"
+OPS="${ONLY_OPS:-$OPS}"
 QD="${QD:-1024}"; QDBIN="${QDBIN:-4096}"
 read -r -a KARGS <<< "${KARGS:-}"; read -r -a PARGS <<< "${PARGS:-}"
-CONFIGS="s1 highdim 1 128
+CONFIGS="${CONFIGS:-s1 highdim 1 128
 s8 highdim 8 32
 s8defer highdim 8 32 --defer-always
 v4s1 highdim_vec4 1 32
 v4s8 highdim_vec4 8 32${EXTRA_CONFIGS:+
-$EXTRA_CONFIGS}"
+$EXTRA_CONFIGS}}"
 mkdir -p "$OUT"
 
 for op in $OPS; do

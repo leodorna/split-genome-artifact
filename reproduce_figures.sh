@@ -34,7 +34,11 @@ $PY scripts/plot_roofline_v3.py --dir $R3/roofline --no-l2 --out fig_roofline_v3
 step "Solution quality against the baselines, Sphere/OneMax (Figure 6 is drawn with the transfer step below)"
 $PY scripts/analyze_quality.py --dir $R3/quality > $A/quality_sphere_onemax.txt
 
-step "Figure 7, Table 4 and Table S1: comparison with EvoX (baselines: torch.compile max-autotune-no-cudagraphs)"
+step "Figure 7 and the large-D block of Table S3: time to quality at I=1, N=64, D=2^20"
+$PY scripts/analyze_quality.py --dir results/largeD/quality > results/largeD/quality_stdout.txt
+$PY scripts/plot_time_to_quality.py --dir results/largeD > results/largeD/time_to_quality.txt
+
+step "Figure 8, Table 4 and Table S1: comparison with EvoX (baselines: torch.compile max-autotune-no-cudagraphs)"
 $PY scripts/plot_evox_comparison.py --final $F --evox $R3/evox_autotune --outdir $A > $A/evox_comparison.txt
 $PY scripts/gen_evox_config_table.py --csv $A/augmented_vs_evox.csv --tex $A/evox_launch_configs.tex
 # the same comparison with the default compile mode, for Table S4
@@ -60,7 +64,7 @@ $PY scripts/analyze_defer_probe.py $R3/defer_probe_v3.csv > $A/defer_probe.txt
 $PY scripts/analyze_evox_variants.py --dir $R3/evox > $A/evox_variants.txt
 $PY scripts/paper_numbers_v3.py --dir $R3 > $A/paper_numbers_v3.txt
 
-step "Table 5, Figures 6 and 8, Table S3: transfer to CEC 2013 LSGO f1-f3, f12 and the knapsack; validation cells"
+step "Table 5, Figures 6 and 9, Table S3: transfer to CEC 2013 LSGO f1-f3, f12 and the knapsack; validation cells"
 T=results/transfer
 for z in $(find $T -name 'phase3_*.csv.gz'); do [ -f "${z%.gz}" ] || gunzip -k "$z"; done
 $PY scripts/analyze_transfer.py --dir $T --ref $R3 > $T/transfer_summary_stdout.txt

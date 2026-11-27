@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite the paper below."
 type: software
 title: "Evaluation artifact: split-genome GPU kernels for evolutionary algorithms"
-version: 1.0.1
+version: 1.0.2
 abstract: >-
   Evaluation artifact of the paper "Split-Genome Layouts for Evolutionary Algorithms on
   GPUs: Bottlenecks and Trade-offs at Million-Variable Scale": the CUDA C++ kernels, the

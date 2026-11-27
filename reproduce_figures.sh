@@ -37,6 +37,8 @@ $PY scripts/analyze_quality.py --dir $R3/quality > $A/quality_sphere_onemax.txt
 step "Figure 7 and the large-D block of Table S3: time to quality at I=1, N=64, D=2^20"
 $PY scripts/analyze_quality.py --dir results/largeD/quality > results/largeD/quality_stdout.txt
 $PY scripts/plot_time_to_quality.py --dir results/largeD > results/largeD/time_to_quality.txt
+# search progress (share of the total improvement in the last 100/500 generations), Section 4.2
+$PY scripts/quality_progress.py > $A/quality_progress.txt
 
 step "Figure 8, Table 4 and Table S1: comparison with EvoX (baselines: torch.compile max-autotune-no-cudagraphs)"
 $PY scripts/plot_evox_comparison.py --final $F --evox $R3/evox_autotune --outdir $A > $A/evox_comparison.txt

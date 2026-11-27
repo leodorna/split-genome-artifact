@@ -32,6 +32,7 @@ Analysis outputs go to `results/rerun_v3/analysis/`, `results/gpu2/analysis/` an
 | Figure 6, best fitness per generation, ours and the baselines | `plot_quality_paper.py`, `analyze_quality.py` | `results/transfer/fig_quality_paper.pdf`, `results/*/quality/quality_summary.csv`, `results/transfer/*/quality/quality.txt` |
 | Table S3 (supplement), equivalence tests of the fitness | `quality_table.py` | `results/transfer/table_quality_supp.tex`, `table_quality_supp.txt` |
 | Figure 7, best fitness against time at the large-D cell; large-D block of Table S3 | `analyze_quality.py --dir results/largeD/quality`, `plot_time_to_quality.py` | `results/largeD/fig_time_to_quality.pdf`, `time_to_quality.csv`, `quality/quality_summary.csv` |
+| Section 4.2, search progress (share of the improvement in the last 100/500 generations) | `quality_progress.py` | `results/rerun_v3/analysis/quality_progress.txt` |
 | Figure 8, Table 4, speedups over EvoX | `plot_evox_comparison.py --evox results/rerun_v3/evox_autotune` | `results/rerun_v3/analysis/fig_evox_comparison.pdf`, `evox_comparison.txt`, `augmented_vs_evox.csv` |
 | Table S1 (supplement), launch configurations | `gen_evox_config_table.py` | `results/rerun_v3/analysis/evox_launch_configs.tex` |
 | Table S4 (supplement), `torch.compile` modes of the baselines | `analyze_compile_modes.py` | `results/rerun_v3/analysis/compile_modes.txt`, `table_compile_modes_supp.tex` |

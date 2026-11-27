@@ -29,11 +29,11 @@ Analysis outputs go to `results/rerun_v3/analysis/`, `results/gpu2/analysis/` an
 | Section 4.1.2, DE donor probe | `analyze_donor_probe.py` | `results/rerun_v3/analysis/donor_probe.txt` |
 | Table 3 (right), the heuristic on the second GPU | `score_gpu2.py` | `results/gpu2/analysis/score_gpu2.txt` |
 | Figure 5, instruction roofline | `plot_roofline_v3.py --no-l2` | `results/rerun_v3/roofline/fig_roofline_v3_nol2.pdf` |
-| Figure 6, best fitness per generation, ours and the baselines | `plot_quality_paper.py`, `analyze_quality.py` | `results/transfer/fig_quality_paper.pdf`, `results/*/quality/quality_summary.csv`, `results/transfer/*/quality/quality.txt` |
+| Figure 7, best fitness per generation, ours and the baselines | `plot_quality_paper.py`, `analyze_quality.py` | `results/transfer/fig_quality_paper.pdf`, `results/*/quality/quality_summary.csv`, `results/transfer/*/quality/quality.txt` |
 | Table S3 (supplement), equivalence tests of the fitness | `quality_table.py` | `results/transfer/table_quality_supp.tex`, `table_quality_supp.txt` |
-| Figure 7, best fitness against time at the large-D cell; large-D block of Table S3 | `analyze_quality.py --dir results/largeD/quality`, `plot_time_to_quality.py` | `results/largeD/fig_time_to_quality.pdf`, `time_to_quality.csv`, `quality/quality_summary.csv` |
+| Figure 8, best fitness against time at the large-D cell; large-D block of Table S3 | `analyze_quality.py --dir results/largeD/quality`, `plot_time_to_quality.py` | `results/largeD/fig_time_to_quality.pdf`, `time_to_quality.csv`, `quality/quality_summary.csv` |
 | Section 4.2, search progress (share of the improvement in the last 100/500 generations) | `quality_progress.py` | `results/rerun_v3/analysis/quality_progress.txt` |
-| Figure 8, Table 4, speedups over EvoX | `plot_evox_comparison.py --evox results/rerun_v3/evox_autotune` | `results/rerun_v3/analysis/fig_evox_comparison.pdf`, `evox_comparison.txt`, `augmented_vs_evox.csv` |
+| Figure 6, Table 4, speedups over EvoX | `plot_evox_comparison.py --evox results/rerun_v3/evox_autotune` | `results/rerun_v3/analysis/fig_evox_comparison.pdf`, `evox_comparison.txt`, `augmented_vs_evox.csv` |
 | Table S1 (supplement), launch configurations | `gen_evox_config_table.py` | `results/rerun_v3/analysis/evox_launch_configs.tex` |
 | Table S4 (supplement), `torch.compile` modes of the baselines | `analyze_compile_modes.py` | `results/rerun_v3/analysis/compile_modes.txt`, `table_compile_modes_supp.tex` |
 | Table S5 (supplement), the comparison with EvoX on two GPUs | `plot_evox_comparison.py --sm 84`, `compare_evox_gpu2.py` | `results/gpu2/analysis/evox_gpu2_vs_gpu1.txt` |
@@ -138,13 +138,13 @@ otherwise idle GPU; times are those of the RTX PRO 6000.
 |---|---|---|
 | register table, needed by the sweeps on a new GPU | `CUDA_ARCH=86 REGS_OUT=results/kernel_regs_sm86.csv bash scripts/gen_kernel_regs_v2.sh` | 1 min |
 | main ablation (Figures 3, 4; Tables 3, 4) | see below | 16 h |
-| baselines, autotuned, of the main comparison and the transfer functions (Figures 8, 9; Tables 4, 5) | `bash results/rerun_v3/evox_autotune.sh` | 3 h |
+| baselines, autotuned, of the main comparison and the transfer functions (Figures 6, 9; Tables 4, 5) | `bash results/rerun_v3/evox_autotune.sh` | 3 h |
 | baselines under the other compile modes (Table S4) | `bash results/rerun_v3/evox_modes.sh` (CUDA Graphs); `OUTDIR=results/rerun_v3/evox bash scripts/evox_islands_sweep.sh` (default mode) | 25 min + 1 h |
 | baseline variants and deferred restore | `bash scripts/rerun_v3_evox_followup.sh` | 40 min |
-| transfer: kernel sweeps, fitness traces and profiles on the CEC functions and the knapsack (Table 5, Figures 6, 9) | `bash scripts/fetch_cec2013_shifts.sh && STEPS="kernels quality ncu" bash scripts/transfer_campaign.sh` | 7.5 h |
+| transfer: kernel sweeps, fitness traces and profiles on the CEC functions and the knapsack (Table 5, Figures 7, 9) | `bash scripts/fetch_cec2013_shifts.sh && STEPS="kernels quality ncu" bash scripts/transfer_campaign.sh` | 7.5 h |
 | validation cells (Table 5) | `bash scripts/heuristic_validation.sh` | 20 min |
-| fitness equivalence, seeds 10–29 (Figure 6, Table S3) | `bash results/transfer/quality30.sh`, after the campaign's quality step (seeds 0–9) | 20 min |
-| fitness equivalence and time to quality at the large-D cell (Figure 7, Table S3) | `bash results/largeD/run.sh` | 20 min |
+| fitness equivalence, seeds 10–29 (Figure 7, Table S3) | `bash results/transfer/quality30.sh`, after the campaign's quality step (seeds 0–9) | 20 min |
+| fitness equivalence and time to quality at the large-D cell (Figure 8, Table S3) | `bash results/largeD/run.sh` | 20 min |
 | roofline (Figure 5), needs Nsight Compute and access to performance counters | `bash scripts/run_roofline_v3.sh` | 10 min |
 | DE donor probe | `bash scripts/donor_probe.sh` | 5 min |
 | second GPU (Tables 3, S5), after building with `CUDA_ARCH=86` | `bash scripts/gpu2/run_sweep.sh i1 && bash scripts/gpu2/run_sweep.sh rest`, then `bash scripts/gpu2/run_evox.sh` (`COMPILE_MODE=max-autotune-no-cudagraphs` for autotuned baselines) | 7 h + 2 h (RTX A6000) |

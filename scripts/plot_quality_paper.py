@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figure 6 of the paper: best fitness per generation, ours against the baselines, for
+"""Figure 7 of the paper: best fitness per generation, ours against the baselines, for
 every function the paper times: Sphere and the CEC 2013 LSGO f1, f2, f3, f12 (rows:
 de-gen, ga-gen), and OneMax and the 0/1 knapsack (ux-bf, last column). Median and range
 over the seeds of island-local compiled EvoX (or the PyTorch binary GA) and of our scalar

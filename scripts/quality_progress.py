@@ -43,7 +43,7 @@ def main():
                     fig6["last500"].append(l500)
                 print(f"{name:28s} {op:7s} {cfg:5s} last 100: {100 * l100:5.2f}%  last 500: {100 * l500:5.2f}%  "
                       + "  ".join(f"by gen {g}: {100 * v:5.1f}%" for g, v in by.items()))
-    print(f"Figure 6 panels: the last 100 generations contribute {100 * min(fig6['last100']):.2f}-"
+    print(f"Figure 7 panels: the last 100 generations contribute {100 * min(fig6['last100']):.2f}-"
           f"{100 * max(fig6['last100']):.2f}% of the improvement, the last 500 {100 * min(fig6['last500']):.2f}-"
           f"{100 * max(fig6['last500']):.2f}%")
 

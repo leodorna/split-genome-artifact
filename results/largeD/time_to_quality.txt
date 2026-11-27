@@ -1,0 +1,10 @@
+{'op': 'de', 'config': 'evox', 'seeds': 30, 'gen_time_us': 1544.2, 'time_1000_gens_s': 1.544, 'median_best_gen1000': 272789.9535}
+{'op': 'de', 'config': 's1', 'seeds': 30, 'gen_time_us': 1289.9, 'time_1000_gens_s': 1.29, 'median_best_gen1000': 272687.797}
+{'op': 'de', 'config': 'heur', 'seeds': 30, 'gen_time_us': 687.4, 'time_1000_gens_s': 0.687, 'median_best_gen1000': 272676.25}
+{'op': 'sbx-pm', 'config': 'evox', 'seeds': 30, 'gen_time_us': 1810.4, 'time_1000_gens_s': 1.81, 'median_best_gen1000': 342484.09400000004}
+{'op': 'sbx-pm', 'config': 's1', 'seeds': 30, 'gen_time_us': 2872.0, 'time_1000_gens_s': 2.872, 'median_best_gen1000': 342285.578}
+{'op': 'sbx-pm', 'config': 'heur', 'seeds': 30, 'gen_time_us': 763.7, 'time_1000_gens_s': 0.764, 'median_best_gen1000': 342343.5315}
+{'op': 'ux-bf', 'config': 'evox', 'seeds': 30, 'gen_time_us': 5328.1, 'time_1000_gens_s': 5.328, 'median_best_gen1000': 16630750.0}
+{'op': 'ux-bf', 'config': 's1', 'seeds': 30, 'gen_time_us': 3430.4, 'time_1000_gens_s': 3.43, 'median_best_gen1000': 16631276.0}
+{'op': 'ux-bf', 'config': 'heur', 'seeds': 30, 'gen_time_us': 997.6, 'time_1000_gens_s': 0.998, 'median_best_gen1000': 16631276.0}
+wrote results/largeD/fig_time_to_quality.pdf

@@ -10,7 +10,7 @@ set -uo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; ROOT="$(cd "$HERE/../.." && pwd)"
 export I=1 N=64 QD=1048576 QDBIN=33554432 SEEDS="${SEEDS:-30}" GENS="${GENS:-1000}"
 export OUT="$HERE/quality"
-# heuristic (Equation 14, 188 SMs): de (4, 512, 1), sbx-pm and ux-bf (8, 512, 1)
+# heuristic (Equation 7, 188 SMs): de (4, 512, 1), sbx-pm and ux-bf (8, 512, 1)
 for spec in "de-gen 4" "ga-gen 8" "ux-bf 8"; do
   set -- $spec
   ONLY_OPS=$1 CONFIGS="s1 highdim 1 512

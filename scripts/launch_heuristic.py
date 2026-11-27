@@ -62,7 +62,7 @@ def p2c(x):
 
 
 def launch_config(op, family, I, N, D, sm_count, beta=1.0, ustar=16, occ=False, tmax=512):
-    """occ=False, ustar=16: the first rule, kept for the sensitivity sweep. Equation 14 of
+    """occ=False, ustar=16: the first rule, kept for the sensitivity sweep. Equation 7 of
     the paper: ustar=9 (the derived geometric mean) and occ=True,
     a floor of one block of tmax threads per SM, t_x >= pow2ceil(n_SM tmax / (I C s)),
     and at most pow2floor(U) threads (no thread without a unit)."""
@@ -168,7 +168,7 @@ def main():
 
     print("== derivation from the sensitivity analysis ==")
     ustar_d, lo, hi, drows = derive(cells, a.sens, a.sm)
-    # Equation 14: u* = 9 (the derived geometric mean) and the occupancy term b. On the nine
+    # Equation 7: u* = 9 (the derived geometric mean) and the occupancy term b. On the nine
     # cells (power-of-two U, many rows for short genomes) it picks the same configurations
     # as u* = 16 without b, the first rule that launch_heuristic_sweep.csv varies.
     beta, ustar, occ = 1.0, 9, True
@@ -180,7 +180,7 @@ def main():
         w.writerow(["item", "op", "family", "D_lo", "D_hi_or_lo", "value"])
         w.writerows(drows)
 
-    print(f"\n== evaluation of Equation 14 (beta={beta}, u*={ustar}, occupancy term b, SMs={a.sm}) ==")
+    print(f"\n== evaluation of Equation 7 (beta={beta}, u*={ustar}, occupancy term b, SMs={a.sm}) ==")
     fixed = fixed_regrets(cells, keys)
     per = regrets(cells, keys, a.sm, beta, ustar, occ)
     for name, r in (("heuristic (derived)", per),

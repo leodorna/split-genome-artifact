@@ -90,7 +90,7 @@ def main():
     checks = [g for g in CHECK if g < min(len(v[0]) for v in T.values())]   # shorter runs: fewer
     rows = []
 
-    print("== same algorithm: ours vs island-local EvoX (10 seeds each) ==")
+    print(f"== same algorithm: ours vs island-local EvoX ({len(seeds)} seeds each) ==")
     for op in ops:
         for g in checks:
             ev = {w: np.array([T[(op, "evox", s)][i][g] for s in seeds if (op, "evox", s) in T])

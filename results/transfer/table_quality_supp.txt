@@ -5,3 +5,4 @@ $f_2$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 0.25; w
 $f_3$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-0.0%, gen 100: +-0.1%, gen 1000: +-0.1%
 $f_{12}$ ($D = 1000$, official shift): 72 tests, smallest Holm-adjusted p = 0.38; widest best-fitness interval gen 10: +-6.4%, gen 100: +-10.7%, gen 1000: +-14.7%
 Knapsack (4096 items): 36 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-0.1%, gen 100: +-0.1%, gen 1000: +-0.0%
+Sphere / OneMax, large $D$ ($I = 1$, $N = 64$, $D = 2^{20}$, $2^{25}$ bits): 36 tests, smallest Holm-adjusted p = 1.00; widest best-fitness interval gen 10: +-1.2%, gen 100: +-0.3%, gen 1000: +-0.3%

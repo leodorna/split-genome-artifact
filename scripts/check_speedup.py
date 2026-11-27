@@ -45,7 +45,7 @@ FUNCS = {"de-gen": ("sphere", "cec-f1", "cec-f2", "cec-f3", "cec-f12"),
          "ux-bf": ("onemax", "knapsack")}
 PAPER = {"de-gen": "de", "ga-gen": "sbx-pm", "ux-bf": "ux-bf"}   # code name -> paper name
 MODE = "max-autotune-no-cudagraphs"
-USTAR, OCC = 9, True   # the paper's heuristic (Equation 14): u* = 9 and the occupancy term b
+USTAR, OCC = 9, True   # the paper's heuristic (Equation 7): u* = 9 and the occupancy term b
 
 
 def write_reference():

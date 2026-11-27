@@ -7,7 +7,7 @@ and the 0/1 knapsack (ux-bf), within the campaign's launch space (every s and tx
 ty = 1), on the nine ablation cells and three D = 1000 cells. Per cell and variant:
 
   regret_first    t(first rule: u* = 16, no occupancy floor) / t(best config of the cell)
-  regret_heur     the same for the revised rule (paper Eq. 11: u* = 9, occupancy floor),
+  regret_heur     the same for the revised rule (paper Eq. 7: u* = 9, occupancy floor),
                   which is also the configuration of speedup_heur and cost_vs_sphere
   regret_sphere   t(best config of the cell on Sphere/OneMax) / t(best): per-cell
                   tuning done on Sphere, reused (nine grid cells only)
@@ -68,7 +68,7 @@ def cells_ty1(path):
     return cells
 
 
-REV_USTAR = 9   # revised rule (paper Eq. 11): derived u*, occupancy floor
+REV_USTAR = 9   # revised rule (paper Eq. 7): derived u*, occupancy floor
 CAPS = [1 << k for k in range(12)]   # 1 ... 2048, the sweep's caps
 
 

@@ -16,14 +16,14 @@ step "unpack the timing tables"
 [ -f $G2/phase3_gpu2_all.csv ]        || gunzip -k $G2/phase3_gpu2_all.csv.gz
 F=$R3/phase3_unified_final_v3.csv
 
-step "Figure 3 and Equation 13: penalties P_k of the 54 cases"
+step "Figure 3 and Equation 6: penalties P_k of the 54 cases"
 $PY scripts/sensitivity_pmnf.py --final $F --dir $A > $A/sensitivity.txt
 $PY scripts/plot_sensitivity_heatmap.py --coeffs $A/sensitivity_coeffs_pmnf.csv --outdir $A
 
 step "Figure 4: near-optimal levels and the heuristic's choices"
 $PY scripts/plot_sensitivity_intervals.py --final $F --out $A/fig_sensitivity_intervals | tee $A/sensitivity_intervals.txt
 
-step "Table 3 (left): regret of the launch heuristic (Equation 14); Section S5"
+step "Table 3 (left): regret of the launch heuristic (Equation 7); Section S5"
 $PY scripts/launch_heuristic.py --final $F --sens $A/sensitivity_coeffs_pmnf.csv --evox $R3/evox_autotune --dir $A \
   > $A/launch_heuristic.txt
 $PY scripts/heuristic_loo.py --final $F --dir $A > $A/heuristic_loo.txt
@@ -37,7 +37,7 @@ $PY scripts/analyze_quality.py --dir $R3/quality > $A/quality_sphere_onemax.txt
 step "Figure 8 and the large-D block of Table S3: time to quality at I=1, N=64, D=2^20"
 $PY scripts/analyze_quality.py --dir results/largeD/quality > results/largeD/quality_stdout.txt
 $PY scripts/plot_time_to_quality.py --dir results/largeD > results/largeD/time_to_quality.txt
-# search progress (share of the total improvement in the last 100/500 generations), Section 4.2
+# search progress (share of the total improvement in the last 100/500 generations), Section 4.2.1
 $PY scripts/quality_progress.py > $A/quality_progress.txt
 
 step "Figure 6, Table 4 and Table S1: comparison with EvoX (baselines: torch.compile max-autotune-no-cudagraphs)"

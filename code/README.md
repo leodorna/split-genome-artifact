@@ -67,7 +67,7 @@ or `D/128`), `C` couples per island (`N` for DE, `N/2` for the GAs) and `n_SM` S
     b   = 2^ceil(log2(512 * n_SM / (I * C * s)))
     t_y = 1
 
-(Equation 14 of the paper.) On the paper's grid its median regret against exhaustive
+(Equation 7 of the paper.) On the paper's grid its median regret against exhaustive
 tuning is 1.04 for `ga-gen` and `ux-bf`; DE's best launch depends on its memory traffic and
 needs tuning on each device (see the paper).
 

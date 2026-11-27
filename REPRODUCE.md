@@ -22,9 +22,9 @@ Analysis outputs go to `results/rerun_v3/analysis/`, `results/gpu2/analysis/` an
 
 | Paper item | Script | Output |
 |---|---|---|
-| Figure 3, penalties $P_k$ (Equation 13) | `sensitivity_pmnf.py`, `plot_sensitivity_heatmap.py` | `results/rerun_v3/analysis/fig_sensitivity_heatmap.pdf` |
+| Figure 3, penalties $P_k$ (Equation 6) | `sensitivity_pmnf.py`, `plot_sensitivity_heatmap.py` | `results/rerun_v3/analysis/fig_sensitivity_heatmap.pdf` |
 | Figure 4, near-optimal levels | `plot_sensitivity_intervals.py` | `results/rerun_v3/analysis/fig_sensitivity_intervals.pdf` |
-| Table 3 (left), regret of the launch heuristic (Equation 14) | `launch_heuristic.py` | `results/rerun_v3/analysis/launch_heuristic.txt` |
+| Table 3 (left), regret of the launch heuristic (Equation 7) | `launch_heuristic.py` | `results/rerun_v3/analysis/launch_heuristic.txt` |
 | Section S5 (supplement), constants of the heuristic; leave-one-cell-out regret | `heuristic_loo.py` | `results/rerun_v3/analysis/heuristic_loo.txt` |
 | Section 4.1.2, DE donor probe | `analyze_donor_probe.py` | `results/rerun_v3/analysis/donor_probe.txt` |
 | Table 3 (right), the heuristic on the second GPU | `score_gpu2.py` | `results/gpu2/analysis/score_gpu2.txt` |
@@ -32,7 +32,7 @@ Analysis outputs go to `results/rerun_v3/analysis/`, `results/gpu2/analysis/` an
 | Figure 7, best fitness per generation, ours and the baselines | `plot_quality_paper.py`, `analyze_quality.py` | `results/transfer/fig_quality_paper.pdf`, `results/*/quality/quality_summary.csv`, `results/transfer/*/quality/quality.txt` |
 | Table S3 (supplement), equivalence tests of the fitness | `quality_table.py` | `results/transfer/table_quality_supp.tex`, `table_quality_supp.txt` |
 | Figure 8, best fitness against time at the large-D cell; large-D block of Table S3 | `analyze_quality.py --dir results/largeD/quality`, `plot_time_to_quality.py` | `results/largeD/fig_time_to_quality.pdf`, `time_to_quality.csv`, `quality/quality_summary.csv` |
-| Section 4.2, search progress (share of the improvement in the last 100/500 generations) | `quality_progress.py` | `results/rerun_v3/analysis/quality_progress.txt` |
+| Section 4.2.1, search progress (share of the improvement in the last 100/500 generations) | `quality_progress.py` | `results/rerun_v3/analysis/quality_progress.txt` |
 | Figure 6, Table 4, speedups over EvoX | `plot_evox_comparison.py --evox results/rerun_v3/evox_autotune` | `results/rerun_v3/analysis/fig_evox_comparison.pdf`, `evox_comparison.txt`, `augmented_vs_evox.csv` |
 | Table S1 (supplement), launch configurations | `gen_evox_config_table.py` | `results/rerun_v3/analysis/evox_launch_configs.tex` |
 | Table S4 (supplement), `torch.compile` modes of the baselines | `analyze_compile_modes.py` | `results/rerun_v3/analysis/compile_modes.txt`, `table_compile_modes_supp.tex` |
@@ -77,7 +77,7 @@ with $D$ as in Table 2 (`ux-bf` runs $32D$ bits, the same memory):
 
 Functions: `sphere` (`de`, `sbx-pm`), `onemax` (`ux-bf`), `cec-f1`, `cec-f2`, `cec-f3`,
 `cec-f12` (`de`, `sbx-pm`) and `knapsack` (`ux-bf`). `--config` is `heuristic` (the
-default: Equation 14 with this GPU's SM count), `tuned` (the paper's best configuration
+default: Equation 7 with this GPU's SM count), `tuned` (the paper's best configuration
 of the case) or an explicit `s,tx,ty`. `--seeds` sets the seeds per side (default 3).
 
 Nothing is hidden behind the speedup. The script prints the exact command of each side,
@@ -175,6 +175,7 @@ does not depend on the shift values), the same in the kernels and the baselines.
 | `results/rerun_v3/evox_autotune/` | the paper's baselines, `torch.compile` `max-autotune-no-cudagraphs`, panmictic and island-local, 10 seeds (`evox_gen_<op>.csv`) |
 | `results/rerun_v3/evox/` | the same in the default compile mode; variants and tournament selection |
 | `results/rerun_v3/evox_modes/` | the compile-mode probe (`reduce-overhead`, 3 seeds) and its summary |
+| `results/largeD/` | the large-D cell ($I = 1$, $N = 64$, $D = 2^{20}$): fitness traces, ours unsplit and split and the baseline, 30 seeds (`quality/`), generation times (`timing/`, from `check_speedup.py`), time to quality (`time_to_quality.csv`) and the driver (`run.sh`) |
 | `results/rerun_v3/quality/` | best and mean fitness per generation on Sphere and OneMax, ours and the baselines, 30 seeds |
 | `results/transfer/<f>/` | per transfer function: kernel sweep (`phase3_<f>.csv.gz`), baselines (`evox_autotune/`; `evox/`: default mode), fitness traces at $D = 1000$ with the official shifts or with 4096 items, 30 seeds (`quality/`), Nsight Compute profiles (`roofline/`) |
 | `results/transfer/validation/` | sweeps of the seven validation cells (`configs/sweep_validation.json`) |

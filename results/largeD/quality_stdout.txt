@@ -1,0 +1,31 @@
+== same algorithm: ours vs island-local EvoX (30 seeds each) ==
+  de-gen gen   10 best | evox 3.008e+05 [2.846e+05, 3.101e+05] | s1: 3.009e+05 (+0.0% [-1.2, +0.9], p=0.76)  heur: 3.009e+05 (+0.0% [-1.2, +0.9], p=0.76)
+  de-gen gen  100 best | evox 2.735e+05 [2.719e+05, 2.776e+05] | s1: 2.735e+05 (-0.0% [-0.3, +0.2], p=0.74)  heur: 2.735e+05 (-0.0% [-0.3, +0.2], p=0.74)
+  de-gen gen 1000 best | evox 2.728e+05 [2.711e+05, 2.767e+05] | s1: 2.727e+05 (-0.0% [-0.3, +0.2], p=0.70)  heur: 2.727e+05 (-0.0% [-0.3, +0.2], p=0.62)
+  ga-gen gen   10 best | evox 3.478e+05 [3.475e+05, 3.48e+05] | s1: 3.478e+05 (-0.0% [-0.0, +0.0], p=0.84)  heur: 3.478e+05 (-0.0% [-0.0, +0.0], p=0.84)
+  ga-gen gen  100 best | evox 3.432e+05 [3.425e+05, 3.442e+05] | s1: 3.432e+05 (-0.0% [-0.1, +0.1], p=0.96)  heur: 3.432e+05 (-0.0% [-0.1, +0.1], p=0.92)
+  ga-gen gen 1000 best | evox 3.425e+05 [3.415e+05, 3.438e+05] | s1: 3.423e+05 (-0.1% [-0.1, +0.0], p=0.53)  heur: 3.423e+05 (-0.0% [-0.1, +0.1], p=0.68)
+  ux-bf gen   10 best | evox 1.676e+07 [1.675e+07, 1.676e+07] | s1: 1.676e+07 (-0.0% [-0.0, +0.0], p=0.47)  heur: 1.676e+07 (-0.0% [-0.0, +0.0], p=0.47)
+  ux-bf gen  100 best | evox 1.67e+07 [1.67e+07, 1.67e+07] | s1: 1.67e+07 (+0.0% [-0.0, +0.0], p=0.50)  heur: 1.67e+07 (+0.0% [-0.0, +0.0], p=0.50)
+  ux-bf gen 1000 best | evox 1.663e+07 [1.663e+07, 1.663e+07] | s1: 1.663e+07 (+0.0% [-0.0, +0.0], p=0.27)  heur: 1.663e+07 (+0.0% [-0.0, +0.0], p=0.27)
+  smallest p over all 36 tests: 0.271; tests with p < 0.05: 0; smallest Holm-adjusted p: 1.00
+  gen   10: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-1.2%
+  gen  100: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.3%
+  gen 1000: every 95% interval of (ours / EvoX - 1) for the best fitness lies within +-0.3%
+  largest |median best - EvoX| / EvoX: 0.006 (best and mean); best fitness beyond 2%: none
+
+== layout equivalence: split vs unsplit, same seed ==
+  de-gen  s8       vs s1   : identical trajectory in 0 of 0 seeds
+  de-gen  s8defer  vs s1   : identical trajectory in 0 of 0 seeds
+  de-gen  v4s8     vs v4s1 : identical trajectory in 0 of 0 seeds
+  de-gen  heur     vs s1   : identical trajectory in 0 of 30 seeds; the others part at generations [112, 138, 174, 191, 195, 214, 225, 232, 234, 237, 242, 244, 249, 249, 272, 273, 279, 280, 281, 285, 298, 317, 318, 327, 334, 383, 392, 400, 474, 482]
+  ga-gen  s8       vs s1   : identical trajectory in 0 of 0 seeds
+  ga-gen  s8defer  vs s1   : identical trajectory in 0 of 0 seeds
+  ga-gen  v4s8     vs v4s1 : identical trajectory in 0 of 0 seeds
+  ga-gen  heur     vs s1   : identical trajectory in 0 of 30 seeds; the others part at generations [9, 25, 44, 55, 56, 60, 64, 64, 71, 75, 86, 89, 90, 92, 92, 93, 98, 105, 114, 114, 116, 123, 141, 143, 145, 149, 151, 155, 162, 175]
+  ux-bf   s8       vs s1   : identical trajectory in 0 of 0 seeds
+  ux-bf   s8defer  vs s1   : identical trajectory in 0 of 0 seeds
+  ux-bf   v4s8     vs v4s1 : identical trajectory in 0 of 0 seeds
+  ux-bf   heur     vs s1   : identical trajectory in 30 of 30 seeds
+
+wrote quality_summary.csv, quality_layouts.csv, fig_quality.{pdf,png} in results/largeD/quality
